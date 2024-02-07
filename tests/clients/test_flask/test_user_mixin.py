@@ -1,9 +1,9 @@
 from unittest import TestCase, mock
 from flask import Flask
-from authlib.jose import JsonWebKey
-from authlib.jose.errors import InvalidClaimError
-from authlib.integrations.flask_client import OAuth
-from authlib.oidc.core.grants.util import generate_id_token
+from insertokname-authlib.jose import JsonWebKey
+from insertokname-authlib.jose.errors import InvalidClaimError
+from insertokname-authlib.integrations.flask_client import OAuth
+from insertokname-authlib.oidc.core.grants.util import generate_id_token
 from ..util import get_bearer_token, read_key_file
 
 secret_key = JsonWebKey.import_key('secret', {'kty': 'oct', 'kid': 'f'})

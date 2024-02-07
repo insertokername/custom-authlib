@@ -3,7 +3,7 @@
 Web OAuth Clients
 =================
 
-.. module:: authlib.integrations
+.. module:: insertokname-authlib.integrations
     :noindex:
 
 This documentation covers OAuth 1.0 and OAuth 2.0 integrations for
@@ -14,20 +14,20 @@ Python Web Frameworks like:
 * Starlette: The little ASGI framework that shines
 
 
-Authlib shares a common API design among these web frameworks. Instead
+insertokname-authlib shares a common API design among these web frameworks. Instead
 of introducing them one by one, this documentation contains the common
 usage for them all.
 
 We start with creating a registry with the ``OAuth`` class::
 
     # for Flask framework
-    from authlib.integrations.flask_client import OAuth
+    from insertokname-authlib.integrations.flask_client import OAuth
 
     # for Django framework
-    from authlib.integrations.django_client import OAuth
+    from insertokname-authlib.integrations.django_client import OAuth
 
     # for Starlette framework
-    from authlib.integrations.starlette_client import OAuth
+    from insertokname-authlib.integrations.starlette_client import OAuth
 
     oauth = OAuth()
 
@@ -180,7 +180,7 @@ There are several ``token_endpoint_auth_method``, get a deep inside the
 
 .. note::
 
-    Authlib is using ``request_token_url`` to detect if the client is an
+    insertokname-authlib is using ``request_token_url`` to detect if the client is an
     OAuth 1.0 or OAuth 2.0 client. In OAuth 2.0, there is no ``request_token_url``.
 
 
@@ -228,7 +228,7 @@ Client Authentication Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When fetching access token, the authorization server will require a client
-authentication, Authlib provides **three default methods** defined by RFC7591:
+authentication, insertokname-authlib provides **three default methods** defined by RFC7591:
 
 - ``client_secret_basic``
 - ``client_secret_post``
@@ -237,7 +237,7 @@ authentication, Authlib provides **three default methods** defined by RFC7591:
 But if the remote provider does not support these three methods, we need to
 register our own authentication methods, like :ref:`oauth2_client_auth`::
 
-    from authlib.oauth2.rfc7523 import ClientSecretJWT
+    from insertokname-authlib.oauth2.rfc7523 import ClientSecretJWT
 
     oauth.register(
         'name',
@@ -360,7 +360,7 @@ methods, like::
     oauth.github.delete(url, token=token)
 
 However, it is not a good practice to query the token database in every request
-function. Authlib provides a way to fetch current user's token automatically for
+function. insertokname-authlib provides a way to fetch current user's token automatically for
 you, just ``register`` with ``fetch_token`` function::
 
     def fetch_twitter_token(request):
@@ -431,7 +431,7 @@ Auto Update Token
 ~~~~~~~~~~~~~~~~~
 
 In OAuth 1.0, access token never expires. But in OAuth 2.0, token MAY expire. If
-there is a ``refresh_token`` value, Authlib will auto update the access token if
+there is a ``refresh_token`` value, insertokname-authlib will auto update the access token if
 it is expired.
 
 We do this by passing a ``update_token`` function to ``OAuth`` registry::
@@ -510,8 +510,8 @@ OpenID Connect & UserInfo
 -------------------------
 
 When logging in with OpenID Connect, "access_token" is not what developers
-want. Instead, what developers want is **user info**, Authlib wrap it with
-:class:`~authlib.oidc.core.UserInfo`.
+want. Instead, what developers want is **user info**, insertokname-authlib wrap it with
+:class:`~insertokname-authlib.oidc.core.UserInfo`.
 
 There are two ways to fetch **userinfo** from 3rd party providers. If the
 provider supports OpenID Connect, we can get the user info from the returned
@@ -545,7 +545,7 @@ For OpenID Connect provider, when ``.authorize_access_token``, the provider
 will include a ``id_token`` in the response. This ``id_token`` contains the
 ``UserInfo`` we need so that we don't have to fetch userinfo endpoint again.
 
-The ``id_token`` is a JWT, with Authlib :ref:`jwt_guide`, we can decode it
+The ``id_token`` is a JWT, with insertokname-authlib :ref:`jwt_guide`, we can decode it
 easily. Frameworks integrations will handle it automatically if configurations
 are correct.
 
@@ -562,7 +562,7 @@ A simple solution is to provide the OpenID Connect Discovery Endpoint::
 The discovery endpoint provides all the information we need so that we don't
 have to add ``authorize_url`` and ``access_token_url``.
 
-Check out our client example: https://github.com/authlib/demo-oauth-client
+Check out our client example: https://github.com/insertokname-authlib/demo-oauth-client
 
 But if there is no discovery endpoint, developers MUST add all the missing information
 themselves::

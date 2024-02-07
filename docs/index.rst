@@ -4,7 +4,7 @@
          and JSON Web Token (JWT) support.
     :image: https://repository-images.githubusercontent.com/108510280/cab09300-d0ad-11e9-8113-ed9e6ba76927
 
-Authlib: Python Authentication
+insertokname-authlib: Python Authentication
 ==============================
 
 Release v\ |version|. (:ref:`Installation <install>`)
@@ -13,13 +13,13 @@ The ultimate Python library in building OAuth and OpenID Connect servers.
 It is designed from low level specifications implementations to high level
 frameworks integrations, to meet the needs of everyone.
 
-Authlib is compatible with Python3.6+.
+insertokname-authlib is compatible with Python3.6+.
 
 User's Guide
 ------------
 
 This part of the documentation begins with some background information
-about Authlib, and installation of Authlib. Then it will explain OAuth 1.0,
+about insertokname-authlib, and installation of insertokname-authlib. Then it will explain OAuth 1.0,
 OAuth 2.0, and JOSE. At last, it shows the implementation in frameworks, and
 libraries such as Flask, Django, Requests, HTTPX, Starlette, FastAPI, and etc.
 
@@ -39,12 +39,12 @@ libraries such as Flask, Django, Requests, HTTPX, Starlette, FastAPI, and etc.
 Get Updates
 -----------
 
-Stay tuned with Authlib, here is a history of Authlib changes.
+Stay tuned with insertokname-authlib, here is a history of insertokname-authlib changes.
 
 .. toctree::
     :maxdepth: 2
 
     changelog
 
-Consider to follow `Authlib on Twitter <https://twitter.com/authlib>`_,
-and subscribe `Authlib Blog <https://blog.authlib.org/>`_.
+Consider to follow `insertokname-authlib on Twitter <https://twitter.com/insertokname-authlib>`_,
+and subscribe `insertokname-authlib Blog <https://blog.insertokname-authlib.org/>`_.

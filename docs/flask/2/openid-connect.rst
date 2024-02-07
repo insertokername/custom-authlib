@@ -4,7 +4,7 @@ Flask OIDC Provider
 ===================
 
 .. meta::
-    :description: How to create an OpenID Connect 1.0 server in Flask with Authlib.
+    :description: How to create an OpenID Connect 1.0 server in Flask with insertokname-authlib.
         And understand how OpenID Connect works.
 
 OpenID Connect 1.0 is supported since version 0.6. The integrations are built
@@ -12,13 +12,13 @@ with :ref:`flask_oauth2_custom_grant_types` and :ref:`flask_oauth2_grant_extensi
 Since OpenID Connect is built on OAuth 2.0 frameworks, you need to read
 :ref:`flask_oauth2_server` at first.
 
-.. module:: authlib.oauth2.rfc6749.grants
+.. module:: insertokname-authlib.oauth2.rfc6749.grants
     :noindex:
 
 .. versionchanged:: v0.12
 
     The Grant system has been redesigned from v0.12. This documentation ONLY
-    works for Authlib >=v0.12.
+    works for insertokname-authlib >=v0.12.
 
 Looking for OpenID Connect Client? Head over to :ref:`flask_client`.
 
@@ -98,7 +98,7 @@ extended features. We can apply the :class:`OpenIDCode` extension to
 
 First, we need to implement the missing methods for ``OpenIDCode``::
 
-    from authlib.oidc.core import grants, UserInfo
+    from insertokname-authlib.oidc.core import grants, UserInfo
 
     class OpenIDCode(grants.OpenIDCode):
         def exists_nonce(self, nonce, request):
@@ -178,7 +178,7 @@ The Implicit Flow is mainly used by Clients implemented in a browser using
 a scripting language. You need to implement the missing methods of
 :class:`OpenIDImplicitGrant` before registering it::
 
-    from authlib.oidc.core import grants
+    from insertokname-authlib.oidc.core import grants
 
     class OpenIDImplicitGrant(grants.OpenIDImplicitGrant):
         def exists_nonce(self, nonce, request):
@@ -216,8 +216,8 @@ OpenIDHybridGrant is a subclass of OpenIDImplicitGrant, so the missing methods
 are the same, except that OpenIDHybridGrant has one more missing method, that
 is ``save_authorization_code``. You can implement it like this::
 
-    from authlib.oidc.core import grants
-    from authlib.common.security import generate_token
+    from insertokname-authlib.oidc.core import grants
+    from insertokname-authlib.common.security import generate_token
 
     class OpenIDHybridGrant(grants.OpenIDHybridGrant):
         def save_authorization_code(self, code, request):
@@ -261,4 +261,4 @@ is ``save_authorization_code``. You can implement it like this::
 Since all OpenID Connect Flow require ``exists_nonce``, ``get_jwt_config``
 and ``generate_user_info`` methods, you can create shared functions for them.
 
-Find the `example of OpenID Connect server <https://github.com/authlib/example-oidc-server>`_.
+Find the `example of OpenID Connect server <https://github.com/insertokname-authlib/example-oidc-server>`_.

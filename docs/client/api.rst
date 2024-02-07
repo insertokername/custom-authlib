@@ -2,14 +2,14 @@ Client API References
 =====================
 
 .. meta::
-   :description: API references on Authlib Client and its related Flask/Django integrations.
+   :description: API references on insertokname-authlib Client and its related Flask/Django integrations.
 
-This part of the documentation covers the interface of Authlib Client.
+This part of the documentation covers the interface of insertokname-authlib Client.
 
 Requests OAuth Sessions
 -----------------------
 
-.. module:: authlib.integrations.requests_client
+.. module:: insertokname-authlib.integrations.requests_client
 
 .. autoclass:: OAuth1Session
     :members:
@@ -39,7 +39,7 @@ Requests OAuth Sessions
 HTTPX OAuth Clients
 -------------------
 
-.. module:: authlib.integrations.httpx_client
+.. module:: insertokname-authlib.integrations.httpx_client
 
 .. autoclass:: OAuth1Auth
     :members:
@@ -86,7 +86,7 @@ HTTPX OAuth Clients
 Flask Registry and RemoteApp
 ----------------------------
 
-.. module:: authlib.integrations.flask_client
+.. module:: insertokname-authlib.integrations.flask_client
 
 .. autoclass:: OAuth
     :members:
@@ -98,7 +98,7 @@ Flask Registry and RemoteApp
 Django Registry and RemoteApp
 -----------------------------
 
-.. module:: authlib.integrations.django_client
+.. module:: insertokname-authlib.integrations.django_client
 
 .. autoclass:: OAuth
     :members:
@@ -109,7 +109,7 @@ Django Registry and RemoteApp
 Starlette Registry and RemoteApp
 --------------------------------
 
-.. module:: authlib.integrations.starlette_client
+.. module:: insertokname-authlib.integrations.starlette_client
 
 .. autoclass:: OAuth
     :members:

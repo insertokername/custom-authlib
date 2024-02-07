@@ -12,7 +12,7 @@ OAuth 1.0 is the standardization and combined wisdom of many well established in
 at its creation time. It was first introduced as Twitter's open protocol. It is similar to other protocols
 at that time in use (Google AuthSub, AOL OpenAuth, Yahoo BBAuth, Upcoming API, Flickr API, etc).
 
-Authlib implemented OAuth 1.0 according to RFC5849_, this section will help developers understand the
+insertokname-authlib implemented OAuth 1.0 according to RFC5849_, this section will help developers understand the
 concepts in OAuth 1.0, the authorization flow of OAuth 1.0, and etc.
 
     OAuth provides a method for clients to access server resources on

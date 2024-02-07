@@ -8,25 +8,25 @@ JSON Web Token (JWT)
     We are splitting the ``jose`` module into a separated package. You may be
     interested in joserfc_.
 
-.. _joserfc: https://jose.authlib.org/en/dev/guide/jwt/
+.. _joserfc: https://jose.insertokname-authlib.org/en/dev/guide/jwt/
 
-.. module:: authlib.jose
+.. module:: insertokname-authlib.jose
     :noindex:
 
 JSON Web Token (JWT) is structured by :ref:`specs/rfc7515` or :ref:`specs/rfc7516`
-with certain payload claims. The JWT implementation in Authlib has all
+with certain payload claims. The JWT implementation in insertokname-authlib has all
 built-in algorithms via :ref:`specs/rfc7518`, it can also load private/public
 keys of :ref:`specs/rfc7517`::
 
-    >>> from authlib.jose import jwt
+    >>> from insertokname-authlib.jose import jwt
     >>> header = {'alg': 'RS256'}
-    >>> payload = {'iss': 'Authlib', 'sub': '123', ...}
+    >>> payload = {'iss': 'insertokname-authlib', 'sub': '123', ...}
     >>> private_key = read_file('private.pem')
     >>> s = jwt.encode(header, payload, private_key)
     >>> public_key = read_file('public.pem')
     >>> claims = jwt.decode(s, public_key)
     >>> print(claims)
-    {'iss': 'Authlib', 'sub': '123', ...}
+    {'iss': 'insertokname-authlib', 'sub': '123', ...}
     >>> print(claims.header)
     {'alg': 'RS256', 'typ': 'JWT'}
     >>> claims.validate()
@@ -52,9 +52,9 @@ JWT Encode
 ``jwt.encode`` is the method to create a JSON Web Token string. It encodes the
 payload with the given ``alg`` in header::
 
-    >>> from authlib.jose import jwt
+    >>> from insertokname-authlib.jose import jwt
     >>> header = {'alg': 'RS256'}
-    >>> payload = {'iss': 'Authlib', 'sub': '123', ...}
+    >>> payload = {'iss': 'insertokname-authlib', 'sub': '123', ...}
     >>> private_key = read_file('private.pem')
     >>> s = jwt.encode(header, payload, private_key)
 
@@ -66,7 +66,7 @@ JWT Decode
 ``jwt.decode`` is the method to translate a JSON Web Token string into the
 dict of the payload::
 
-    >>> from authlib.jose import jwt
+    >>> from insertokname-authlib.jose import jwt
     >>> public_key = read_file('public.pem')
     >>> claims = jwt.decode(s, public_key)
 
@@ -88,7 +88,7 @@ There are cases that we don't want to support all the ``alg`` values,
 especially when decoding a token. In this case, we can pass a list
 of supported ``alg`` into :class:`JsonWebToken`::
 
-    >>> from authlib.jose import JsonWebToken
+    >>> from insertokname-authlib.jose import JsonWebToken
     >>> jwt = JsonWebToken(['RS256'])
 
 .. important::
@@ -125,7 +125,7 @@ JWT Payload Claims Validation
 Claims validation is actually handled by :meth:`JWTClaims.validate`, which
 validates payload claims with ``claims_option`` and ``claims_params``. For
 standard JWTClaims, ``claims_params`` value is not used, but it is used in
-:class:`~authlib.oidc.core.IDToken`.
+:class:`~insertokname-authlib.oidc.core.IDToken`.
 
 Here is an example of ``claims_option``::
 
@@ -168,7 +168,7 @@ For instance, you have a JWK set::
     }
 
 And in the token, it has a ``kid=k2`` in the header part, if you pass ``jwks`` to
-the ``key`` parameter, Authlib will auto resolve the correct key::
+the ``key`` parameter, insertokname-authlib will auto resolve the correct key::
 
     jwt.decode(s, key=jwks, ...)
 

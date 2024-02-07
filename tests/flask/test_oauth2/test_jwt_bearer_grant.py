@@ -1,6 +1,6 @@
 from flask import json
-from authlib.oauth2.rfc7523 import JWTBearerGrant as _JWTBearerGrant
-from authlib.oauth2.rfc7523 import JWTBearerTokenGenerator
+from insertokname-authlib.oauth2.rfc7523 import JWTBearerGrant as _JWTBearerGrant
+from insertokname-authlib.oauth2.rfc7523 import JWTBearerTokenGenerator
 from tests.util import read_file_path
 from .models import db, User, Client
 from .oauth2_server import TestCase

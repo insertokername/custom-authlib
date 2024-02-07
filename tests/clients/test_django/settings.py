@@ -22,7 +22,7 @@ CACHES = {
 
 INSTALLED_APPS=[]
 
-AUTHLIB_OAUTH_CLIENTS = {
+insertokname-authlib_OAUTH_CLIENTS = {
     'dev_overwrite': {
         'client_id': 'dev-client-id',
         'client_secret': 'dev-client-secret',

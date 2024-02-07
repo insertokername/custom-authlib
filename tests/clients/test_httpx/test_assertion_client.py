@@ -1,6 +1,6 @@
 import time
 import pytest
-from authlib.integrations.httpx_client import AssertionClient
+from insertokname-authlib.integrations.httpx_client import AssertionClient
 from ..wsgi_helper import MockDispatch
 
 

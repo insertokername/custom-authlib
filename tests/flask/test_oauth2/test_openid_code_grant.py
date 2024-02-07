@@ -1,9 +1,9 @@
 from flask import json, current_app
-from authlib.common.urls import urlparse, url_decode, url_encode
-from authlib.jose import jwt
-from authlib.oidc.core import CodeIDToken
-from authlib.oidc.core.grants import OpenIDCode as _OpenIDCode
-from authlib.oauth2.rfc6749.grants import (
+from insertokname-authlib.common.urls import urlparse, url_decode, url_encode
+from insertokname-authlib.jose import jwt
+from insertokname-authlib.oidc.core import CodeIDToken
+from insertokname-authlib.oidc.core.grants import OpenIDCode as _OpenIDCode
+from insertokname-authlib.oauth2.rfc6749.grants import (
     AuthorizationCodeGrant as _AuthorizationCodeGrant,
 )
 from tests.util import read_file_path
@@ -35,7 +35,7 @@ class OpenIDCode(_OpenIDCode):
 class BaseTestCase(TestCase):
     def config_app(self):
         self.app.config.update({
-            'OAUTH2_JWT_ISS': 'Authlib',
+            'OAUTH2_JWT_ISS': 'insertokname-authlib',
             'OAUTH2_JWT_KEY': 'secret',
             'OAUTH2_JWT_ALG': 'HS256',
         })
@@ -94,7 +94,7 @@ class OpenIDCodeTest(BaseTestCase):
         claims = jwt.decode(
             resp['id_token'], 'secret',
             claims_cls=CodeIDToken,
-            claims_options={'iss': {'value': 'Authlib'}}
+            claims_options={'iss': {'value': 'insertokname-authlib'}}
         )
         claims.validate()
 
@@ -167,7 +167,7 @@ class OpenIDCodeTest(BaseTestCase):
 class RSAOpenIDCodeTest(BaseTestCase):
     def config_app(self):
         self.app.config.update({
-            'OAUTH2_JWT_ISS': 'Authlib',
+            'OAUTH2_JWT_ISS': 'insertokname-authlib',
             'OAUTH2_JWT_KEY': read_file_path('jwk_private.json'),
             'OAUTH2_JWT_ALG': 'RS256',
         })
@@ -206,7 +206,7 @@ class RSAOpenIDCodeTest(BaseTestCase):
             resp['id_token'],
             self.get_validate_key(),
             claims_cls=CodeIDToken,
-            claims_options={'iss': {'value': 'Authlib'}}
+            claims_options={'iss': {'value': 'insertokname-authlib'}}
         )
         claims.validate()
 
@@ -214,7 +214,7 @@ class RSAOpenIDCodeTest(BaseTestCase):
 class JWKSOpenIDCodeTest(RSAOpenIDCodeTest):
     def config_app(self):
         self.app.config.update({
-            'OAUTH2_JWT_ISS': 'Authlib',
+            'OAUTH2_JWT_ISS': 'insertokname-authlib',
             'OAUTH2_JWT_KEY': read_file_path('jwks_private.json'),
             'OAUTH2_JWT_ALG': 'PS256',
         })
@@ -226,7 +226,7 @@ class JWKSOpenIDCodeTest(RSAOpenIDCodeTest):
 class ECOpenIDCodeTest(RSAOpenIDCodeTest):
     def config_app(self):
         self.app.config.update({
-            'OAUTH2_JWT_ISS': 'Authlib',
+            'OAUTH2_JWT_ISS': 'insertokname-authlib',
             'OAUTH2_JWT_KEY': read_file_path('secp521r1-private.json'),
             'OAUTH2_JWT_ALG': 'ES512',
         })
@@ -238,7 +238,7 @@ class ECOpenIDCodeTest(RSAOpenIDCodeTest):
 class PEMOpenIDCodeTest(RSAOpenIDCodeTest):
     def config_app(self):
         self.app.config.update({
-            'OAUTH2_JWT_ISS': 'Authlib',
+            'OAUTH2_JWT_ISS': 'insertokname-authlib',
             'OAUTH2_JWT_KEY': read_file_path('rsa_private.pem'),
             'OAUTH2_JWT_ALG': 'RS256',
         })

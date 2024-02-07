@@ -4,8 +4,8 @@ Django OAuth 2.0 Server
 =======================
 
 .. meta::
-    :description: How to create an OAuth 2.0 provider in Django with Authlib.
-        And understand how OAuth 2.0 works. Authlib has all built-in grant
+    :description: How to create an OAuth 2.0 provider in Django with insertokname-authlib.
+        And understand how OAuth 2.0 works. insertokname-authlib has all built-in grant
         types for you.
 
 .. versionadded:: v0.12
@@ -22,7 +22,7 @@ At the very beginning, we need to have some basic understanding of
     If you are developing on your localhost, remember to set the environment
     variable::
 
-        export AUTHLIB_INSECURE_TRANSPORT=true
+        export insertokname-authlib_INSECURE_TRANSPORT=true
 
 Looking for Django OAuth 2.0 client? Check out :ref:`django_client`.
 

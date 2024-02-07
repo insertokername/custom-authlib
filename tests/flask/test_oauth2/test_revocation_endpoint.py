@@ -1,5 +1,5 @@
 from flask import json
-from authlib.integrations.sqla_oauth2 import create_revocation_endpoint
+from insertokname-authlib.integrations.sqla_oauth2 import create_revocation_endpoint
 from .models import db, User, Client, Token
 from .oauth2_server import TestCase
 from .oauth2_server import create_authorization_server

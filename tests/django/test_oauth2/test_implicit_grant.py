@@ -1,5 +1,5 @@
-from authlib.oauth2.rfc6749 import grants, errors
-from authlib.common.urls import urlparse, url_decode
+from insertokname-authlib.oauth2.rfc6749 import grants, errors
+from insertokname-authlib.common.urls import urlparse, url_decode
 from .oauth2_server import TestCase
 from .models import User, Client
 

@@ -16,19 +16,19 @@ it in :ref:`JWE Guide <jwe_guide>`.
 API Reference
 -------------
 
-.. autoclass:: authlib.jose.JsonWebEncryption
+.. autoclass:: insertokname-authlib.jose.JsonWebEncryption
     :member-order: bysource
     :members:
 
 
-.. autoclass:: authlib.jose.JWEAlgorithm
+.. autoclass:: insertokname-authlib.jose.JWEAlgorithm
     :member-order: bysource
     :members:
 
-.. autoclass:: authlib.jose.JWEEncAlgorithm
+.. autoclass:: insertokname-authlib.jose.JWEEncAlgorithm
     :member-order: bysource
     :members:
 
-.. autoclass:: authlib.jose.JWEZipAlgorithm
+.. autoclass:: insertokname-authlib.jose.JWEZipAlgorithm
     :member-order: bysource
     :members:

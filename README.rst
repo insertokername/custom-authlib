@@ -1,4 +1,4 @@
-Authlib
+insertokname-authlib
 =======
 
 The ultimate Python library in building OAuth and OpenID Connect servers.
@@ -7,12 +7,12 @@ JWS, JWK, JWA, JWT are included.
 Useful Links
 ------------
 
-1. Homepage: https://authlib.org/
-2. Documentation: https://docs.authlib.org/
-3. Purchase Commercial License: https://authlib.org/plans
-4. Blog: https://blog.authlib.org/
-5. More Repositories: https://github.com/authlib
-6. Twitter: https://twitter.com/authlib
+1. Homepage: https://insertokname-authlib.org/
+2. Documentation: https://docs.insertokname-authlib.org/
+3. Purchase Commercial License: https://insertokname-authlib.org/plans
+4. Blog: https://blog.insertokname-authlib.org/
+5. More Repositories: https://github.com/insertokname-authlib
+6. Twitter: https://twitter.com/insertokname-authlib
 7. Donate: https://www.patreon.com/lepture
 
 Specifications
@@ -62,9 +62,9 @@ Implementations
 License
 -------
 
-Authlib is licensed under BSD. Please see LICENSE for licensing details.
+insertokname-authlib is licensed under BSD. Please see LICENSE for licensing details.
 
 If this license does not fit your company, consider to purchase a commercial
-license. Find more information on `Authlib Plans`_.
+license. Find more information on `insertokname-authlib Plans`_.
 
-.. _`Authlib Plans`: https://authlib.org/plans
+.. _`insertokname-authlib Plans`: https://insertokname-authlib.org/plans

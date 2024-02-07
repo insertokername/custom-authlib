@@ -4,7 +4,7 @@ RFC7517: JSON Web Key
 =====================
 
 .. meta::
-    :description: API references on RFC7517 JSON Web Key (JWK) Authlib implementation.
+    :description: API references on RFC7517 JSON Web Key (JWK) insertokname-authlib implementation.
 
 This section contains the generic implementation of RFC7517_. Find how to use
 it in :ref:`JWK Guide <jwk_guide>`.
@@ -15,27 +15,27 @@ it in :ref:`JWK Guide <jwk_guide>`.
 API Reference
 -------------
 
-.. autoclass:: authlib.jose.JsonWebKey
+.. autoclass:: insertokname-authlib.jose.JsonWebKey
    :member-order: bysource
    :members:
 
 
-.. autoclass:: authlib.jose.Key
+.. autoclass:: insertokname-authlib.jose.Key
    :member-order: bysource
    :members:
 
-.. autoclass:: authlib.jose.KeySet
+.. autoclass:: insertokname-authlib.jose.KeySet
    :member-order: bysource
    :members:
 
-.. autoclass:: authlib.jose.OctKey
+.. autoclass:: insertokname-authlib.jose.OctKey
    :member-order: bysource
    :members:
 
-.. autoclass:: authlib.jose.RSAKey
+.. autoclass:: insertokname-authlib.jose.RSAKey
    :member-order: bysource
    :members:
 
-.. autoclass:: authlib.jose.ECKey
+.. autoclass:: insertokname-authlib.jose.ECKey
    :member-order: bysource
    :members:

@@ -1,5 +1,5 @@
 [project]
-name = "Authlib"
+name = "insertokname-authlib"
 description = "The ultimate Python library in building OAuth and OpenID Connect servers and clients."
 authors = [{name = "Hsiaoming Yang", email="me@lepture.com"}]
 dependencies = [
@@ -30,20 +30,20 @@ classifiers = [
 ]
 
 [project.urls]
-Documentation = "https://docs.authlib.org/"
-Purchase = "https://authlib.org/plans"
-Issues = "https://github.com/lepture/authlib/issues"
-Source = "https://github.com/lepture/authlib"
+Documentation = "https://docs.insertokname-authlib.org/"
+Purchase = "https://insertokname-authlib.org/plans"
+Issues = "https://github.com/lepture/insertokname-authlib/issues"
+Source = "https://github.com/lepture/insertokname-authlib"
 Donate = "https://github.com/sponsors/lepture"
-Blog = "https://blog.authlib.org/"
+Blog = "https://blog.insertokname-authlib.org/"
 
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.dynamic]
-version = {attr = "authlib.__version__"}
+version = {attr = "insertokname-authlib.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["authlib", "authlib.*"]
+include = ["insertokname-authlib", "insertokname-authlib.*"]

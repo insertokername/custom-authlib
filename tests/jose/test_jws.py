@@ -1,7 +1,7 @@
 import unittest
 import json
-from authlib.jose import JsonWebSignature
-from authlib.jose import errors
+from insertokname-authlib.jose import JsonWebSignature
+from insertokname-authlib.jose import errors
 from tests.util import read_file_path
 
 

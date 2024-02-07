@@ -1,5 +1,5 @@
 import time
-from authlib.oauth1.rfc5849 import signature
+from insertokname-authlib.oauth1.rfc5849 import signature
 from tests.util import read_file_path, decode_response
 from .oauth1_server import db, User, Client
 from .oauth1_server import (

@@ -2,21 +2,21 @@ import os
 import unittest
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from authlib.oauth1 import (
+from insertokname-authlib.oauth1 import (
     ClientMixin,
     TokenCredentialMixin,
     TemporaryCredentialMixin,
 )
-from authlib.integrations.flask_oauth1 import (
+from insertokname-authlib.integrations.flask_oauth1 import (
     AuthorizationServer, ResourceProtector, current_credential
 )
-from authlib.integrations.flask_oauth1 import (
+from insertokname-authlib.integrations.flask_oauth1 import (
     register_temporary_credential_hooks,
     register_nonce_hooks,
     create_exists_nonce_func as create_cache_exists_nonce_func,
 )
-from authlib.oauth1.errors import OAuth1Error
-from authlib.common.urls import url_encode
+from insertokname-authlib.oauth1.errors import OAuth1Error
+from insertokname-authlib.common.urls import url_encode
 from tests.util import read_file_path
 from ..cache import SimpleCache
 
@@ -292,7 +292,7 @@ def create_flask_app():
 
 class TestCase(unittest.TestCase):
     def setUp(self):
-        os.environ['AUTHLIB_INSECURE_TRANSPORT'] = 'true'
+        os.environ['insertokname-authlib_INSECURE_TRANSPORT'] = 'true'
         app = create_flask_app()
 
         self._ctx = app.app_context()
@@ -307,4 +307,4 @@ class TestCase(unittest.TestCase):
     def tearDown(self):
         db.drop_all()
         self._ctx.pop()
-        os.environ.pop('AUTHLIB_INSECURE_TRANSPORT')
+        os.environ.pop('insertokname-authlib_INSECURE_TRANSPORT')

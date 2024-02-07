@@ -4,19 +4,19 @@ Installation
 ============
 
 .. meta::
-    :description: How to install Authlib with pip, source code, etc.
+    :description: How to install insertokname-authlib with pip, source code, etc.
 
-This part of the documentation covers the installation of Authlib, just
+This part of the documentation covers the installation of insertokname-authlib, just
 like any other software package needs to be installed first.
 
 
-$ pip install Authlib
+$ pip install insertokname-authlib
 ---------------------
 
 
-Installing Authlib is simple with `pip <http://www.pip-installer.org/>`_::
+Installing insertokname-authlib is simple with `pip <http://www.pip-installer.org/>`_::
 
-    $ pip install Authlib
+    $ pip install insertokname-authlib
 
 It will also install the dependencies:
 
@@ -26,54 +26,54 @@ It will also install the dependencies:
     You may enter problems when installing cryptography, check its official
     document at https://cryptography.io/en/latest/installation/
 
-Using Authlib with requests::
+Using insertokname-authlib with requests::
 
-    $ pip install Authlib requests
+    $ pip install insertokname-authlib requests
 
-Using Authlib with httpx::
+Using insertokname-authlib with httpx::
 
-    $ pip install Authlib httpx
+    $ pip install insertokname-authlib httpx
 
-Using Authlib with Flask::
+Using insertokname-authlib with Flask::
 
-    $ pip install Authlib Flask
+    $ pip install insertokname-authlib Flask
 
-Using Authlib with Django::
+Using insertokname-authlib with Django::
 
-    $ pip install Authlib Django
+    $ pip install insertokname-authlib Django
 
-Using Authlib with Starlette::
+Using insertokname-authlib with Starlette::
 
-    $ pip install Authlib httpx Starlette
+    $ pip install insertokname-authlib httpx Starlette
 
 .. versionchanged:: v0.12
 
     "requests" is an optional dependency since v0.12. If you want to use
-    Authlib client, you have to install "requests" by yourself::
+    insertokname-authlib client, you have to install "requests" by yourself::
 
-    $ pip install Authlib requests
+    $ pip install insertokname-authlib requests
 
 Get the Source Code
 -------------------
 
-Authlib is actively developed on GitHub, where the code is
-`always available <https://github.com/lepture/authlib>`_.
+insertokname-authlib is actively developed on GitHub, where the code is
+`always available <https://github.com/lepture/insertokname-authlib>`_.
 
 You can either clone the public repository::
 
-    $ git clone git://github.com/lepture/authlib.git
+    $ git clone git://github.com/lepture/insertokname-authlib.git
 
-Download the `tarball <https://github.com/lepture/authlib/tarball/master>`_::
+Download the `tarball <https://github.com/lepture/insertokname-authlib/tarball/master>`_::
 
-    $ curl -OL https://github.com/lepture/authlib/tarball/master
+    $ curl -OL https://github.com/lepture/insertokname-authlib/tarball/master
 
-Or, download the `zipball <https://github.com/lepture/authlib/zipball/master>`_::
+Or, download the `zipball <https://github.com/lepture/insertokname-authlib/zipball/master>`_::
 
-    $ curl -OL https://github.com/lepture/authlib/zipball/master
+    $ curl -OL https://github.com/lepture/insertokname-authlib/zipball/master
 
 
 Once you have a copy of the source, you can embed it in your Python package,
 or install it into your site-packages easily::
 
-    $ cd authlib
+    $ cd insertokname-authlib
     $ pip install .

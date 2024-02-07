@@ -6,9 +6,9 @@ from copy import deepcopy
 
 from httpx import AsyncClient
 
-from authlib.common.security import generate_token
-from authlib.common.urls import url_encode
-from authlib.integrations.httpx_client import (
+from insertokname-authlib.common.security import generate_token
+from insertokname-authlib.common.urls import url_encode
+from insertokname-authlib.integrations.httpx_client import (
     OAuthError,
     AsyncOAuth2Client,
 )

@@ -2,7 +2,7 @@ Specifications
 ==============
 
 Guide on specifications. You don't have to read this section if you are
-just using Authlib. But it would be good for you to understand how Authlib
+just using insertokname-authlib. But it would be good for you to understand how insertokname-authlib
 works.
 
 .. toctree::

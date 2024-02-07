@@ -1,6 +1,6 @@
 import json
 import time
-from authlib.oauth2.rfc6749.grants import (
+from insertokname-authlib.oauth2.rfc6749.grants import (
     RefreshTokenGrant as _RefreshTokenGrant,
 )
 from .models import User, Client, OAuth2Token

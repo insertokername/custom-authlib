@@ -1,9 +1,9 @@
 import json
 import time
-from authlib.common.encoding import to_unicode
-from authlib.oauth1.rfc5849 import signature
-from authlib.common.urls import add_params_to_uri
-from authlib.integrations.django_oauth1 import ResourceProtector
+from insertokname-authlib.common.encoding import to_unicode
+from insertokname-authlib.oauth1.rfc5849 import signature
+from insertokname-authlib.common.urls import add_params_to_uri
+from insertokname-authlib.integrations.django_oauth1 import ResourceProtector
 from django.http import JsonResponse
 from django.test import override_settings
 from tests.util import read_file_path
@@ -92,7 +92,7 @@ class ResourceTest(TestCase):
         self.assertIn('oauth_timestamp', data['error_description'])
 
     @override_settings(
-        AUTHLIB_OAUTH1_PROVIDER={'signature_methods': ['PLAINTEXT']})
+        insertokname-authlib_OAUTH1_PROVIDER={'signature_methods': ['PLAINTEXT']})
     def test_plaintext_signature(self):
         self.prepare_data()
         handle = self.create_route()
@@ -151,7 +151,7 @@ class ResourceTest(TestCase):
         self.assertEqual(data['error'], 'invalid_nonce')
 
     @override_settings(
-        AUTHLIB_OAUTH1_PROVIDER={'signature_methods': ['RSA-SHA1']})
+        insertokname-authlib_OAUTH1_PROVIDER={'signature_methods': ['RSA-SHA1']})
     def test_rsa_sha1_signature(self):
         self.prepare_data()
         handle = self.create_route()

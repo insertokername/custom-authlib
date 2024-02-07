@@ -11,8 +11,8 @@ It is also possible to extend the signature methods. For example, you want to
 create a **HMAC-SHA256** signature method::
 
     import hmac
-    from authlib.common.encoding import to_bytes
-    from authlib.oauth1.rfc5849 import signature
+    from insertokname-authlib.common.encoding import to_bytes
+    from insertokname-authlib.oauth1.rfc5849 import signature
 
     def verify_hmac_sha256(request):
         text = signature.generate_signature_base_string(request)

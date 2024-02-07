@@ -1,5 +1,5 @@
 import time
-from authlib.oauth1.rfc5849 import signature
+from insertokname-authlib.oauth1.rfc5849 import signature
 from tests.util import read_file_path, decode_response
 from django.test import override_settings
 from django.core.cache import cache
@@ -79,7 +79,7 @@ class AuthorizationTest(TestCase):
         self.assertEqual(data['error'], 'duplicated_oauth_protocol_parameter')
 
     @override_settings(
-        AUTHLIB_OAUTH1_PROVIDER={'signature_methods': ['PLAINTEXT']})
+        insertokname-authlib_OAUTH1_PROVIDER={'signature_methods': ['PLAINTEXT']})
     def test_plaintext_signature(self):
         self.prepare_data()
         server = self.create_server()
@@ -149,7 +149,7 @@ class AuthorizationTest(TestCase):
         self.assertEqual(data['error'], 'invalid_nonce')
 
     @override_settings(
-        AUTHLIB_OAUTH1_PROVIDER={'signature_methods': ['RSA-SHA1']})
+        insertokname-authlib_OAUTH1_PROVIDER={'signature_methods': ['RSA-SHA1']})
     def test_rsa_sha1_signature(self):
         self.prepare_data()
         server = self.create_server()

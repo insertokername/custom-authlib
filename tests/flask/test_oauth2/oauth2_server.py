@@ -2,15 +2,15 @@ import os
 import base64
 import unittest
 from flask import Flask, request
-from authlib.common.security import generate_token
-from authlib.common.encoding import to_bytes, to_unicode
-from authlib.common.urls import url_encode
-from authlib.integrations.sqla_oauth2 import (
+from insertokname-authlib.common.security import generate_token
+from insertokname-authlib.common.encoding import to_bytes, to_unicode
+from insertokname-authlib.common.urls import url_encode
+from insertokname-authlib.integrations.sqla_oauth2 import (
     create_query_client_func,
     create_save_token_func,
 )
-from authlib.integrations.flask_oauth2 import AuthorizationServer
-from authlib.oauth2 import OAuth2Error
+from insertokname-authlib.integrations.flask_oauth2 import AuthorizationServer
+from insertokname-authlib.oauth2 import OAuth2Error
 from .models import db, User, Client, Token
 
 
@@ -74,7 +74,7 @@ def create_flask_app():
 
 class TestCase(unittest.TestCase):
     def setUp(self):
-        os.environ['AUTHLIB_INSECURE_TRANSPORT'] = 'true'
+        os.environ['insertokname-authlib_INSECURE_TRANSPORT'] = 'true'
         app = create_flask_app()
 
         self._ctx = app.app_context()
@@ -89,7 +89,7 @@ class TestCase(unittest.TestCase):
     def tearDown(self):
         db.drop_all()
         self._ctx.pop()
-        os.environ.pop('AUTHLIB_INSECURE_TRANSPORT')
+        os.environ.pop('insertokname-authlib_INSECURE_TRANSPORT')
 
     def create_basic_header(self, username, password):
         text = f'{username}:{password}'

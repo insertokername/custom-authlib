@@ -8,9 +8,9 @@ JSON Web Key (JWK)
     We are splitting the ``jose`` module into a separated package. You may be
     interested in joserfc_.
 
-.. _joserfc: https://jose.authlib.org/en/dev/guide/jwk/
+.. _joserfc: https://jose.insertokname-authlib.org/en/dev/guide/jwk/
 
-.. module:: authlib.jose
+.. module:: insertokname-authlib.jose
     :noindex:
 
 A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure
@@ -35,7 +35,7 @@ This is an Elliptic Curve Public Key represented by JSON data structure.
 Algorithms for ``kty`` (Key Type) is defined by :ref:`specs/rfc7518`.
 Import a key with::
 
-    from authlib.jose import JsonWebKey
+    from insertokname-authlib.jose import JsonWebKey
 
     key_data = read_file('public.pem')
     key = JsonWebKey.import_key(key_data, {'kty': 'RSA'})

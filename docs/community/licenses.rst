@@ -1,7 +1,7 @@
-Authlib Licenses
+insertokname-authlib Licenses
 ================
 
-Authlib offers two licenses, one is BSD for open source projects, one is
+insertokname-authlib offers two licenses, one is BSD for open source projects, one is
 a commercial license for closed source projects.
 
 Open Source License
@@ -42,4 +42,4 @@ Commercial License
 The content of the commercial license can be found in the repository in a file
 named **COMMERCIAL-LICENSE**. You can get a commercial license at:
 
-https://authlib.org/plans
+https://insertokname-authlib.org/plans

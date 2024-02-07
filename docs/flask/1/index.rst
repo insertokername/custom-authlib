@@ -4,7 +4,7 @@ Flask OAuth 1.0 Server
 ======================
 
 .. meta::
-    :description: How to create an OAuth 1.0 server in Flask with Authlib.
+    :description: How to create an OAuth 1.0 server in Flask with insertokname-authlib.
         And understand how OAuth 1.0 works.
 
 Implement OAuth 1.0 provider in Flask. An OAuth 1 provider contains two servers:
@@ -20,7 +20,7 @@ At the very beginning, we need to have some basic understanding of
     If you are developing on your localhost, remember to set the environment
     variable::
 
-        export AUTHLIB_INSECURE_TRANSPORT=true
+        export insertokname-authlib_INSECURE_TRANSPORT=true
 
 Looking for Flask OAuth 1.0 client? Check out :ref:`flask_client`.
 

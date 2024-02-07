@@ -1,7 +1,7 @@
 Register Grants
 ===============
 
-.. module:: authlib.oauth2.rfc6749.grants
+.. module:: insertokname-authlib.oauth2.rfc6749.grants
     :noindex:
 
 There are four grant types defined by RFC6749, you can also create your own
@@ -18,7 +18,7 @@ tokens. In this case, we need a place to store the authorization code. It can
 be kept in a database or a cache like redis. Here is a SQLAlchemy mixin for
 **AuthorizationCode**::
 
-    from authlib.integrations.sqla_oauth2 import OAuth2AuthorizationCodeMixin
+    from insertokname-authlib.integrations.sqla_oauth2 import OAuth2AuthorizationCodeMixin
 
     class AuthorizationCode(db.Model, OAuth2AuthorizationCodeMixin):
         id = db.Column(db.Integer, primary_key=True)
@@ -29,7 +29,7 @@ be kept in a database or a cache like redis. Here is a SQLAlchemy mixin for
 
 Implement this grant by subclassing :class:`AuthorizationCodeGrant`::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
 
     class AuthorizationCodeGrant(grants.AuthorizationCodeGrant):
         def save_authorization_code(self, code, request):
@@ -84,7 +84,7 @@ owner granted the access, an access token is issued in the redirect URI,
 there is no missing implementation, which means it can be easily registered
 with::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
 
     # register it to grant endpoint
     server.register_grant(grants.ImplicitGrant)
@@ -100,7 +100,7 @@ token. This grant type should be used only when the client is trustworthy;
 implement it with a subclass of
 :class:`ResourceOwnerPasswordCredentialsGrant`::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
 
     class PasswordGrant(grants.ResourceOwnerPasswordCredentialsGrant):
         def authenticate_user(self, username, password):
@@ -127,7 +127,7 @@ Client credentials grant type can access public resources and MAYBE the
 client's creator's resources, depending on how you issue tokens to this
 grant type. It can be easily registered with::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
 
     # register it to grant endpoint
     server.register_grant(grants.ClientCredentialsGrant)
@@ -143,11 +143,11 @@ You can add more in the subclass::
 Refresh Token Grant
 -------------------
 
-Many OAuth 2 providers do not implement a refresh token endpoint. Authlib
+Many OAuth 2 providers do not implement a refresh token endpoint. insertokname-authlib
 provides it as a grant type; implement it with a subclass of
 :class:`RefreshTokenGrant`::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
 
     class RefreshTokenGrant(grants.RefreshTokenGrant):
         def authenticate_refresh_token(self, refresh_token):
@@ -187,7 +187,7 @@ response. Developers can change this behavior with::
 Custom Grant Types
 ------------------
 
-It is also possible to create your own grant types. In Authlib, a **Grant**
+It is also possible to create your own grant types. In insertokname-authlib, a **Grant**
 supports two endpoints:
 
 1. Authorization Endpoint: which can handle requests with ``response_type``.
@@ -199,7 +199,7 @@ supports two endpoints:
 
 Creating a custom grant type with **BaseGrant**::
 
-    from authlib.oauth2.rfc6749.grants import (
+    from insertokname-authlib.oauth2.rfc6749.grants import (
         BaseGrant, AuthorizationEndpointMixin, TokenEndpointMixin
     )
 
@@ -237,7 +237,7 @@ grants::
 
     authorization_server.register_grant(AuthorizationCodeGrant, [extension])
 
-For instance, there is the ``CodeChallenge`` extension in Authlib::
+For instance, there is the ``CodeChallenge`` extension in insertokname-authlib::
 
     server.register_grant(AuthorizationCodeGrant, [CodeChallenge(required=False)])
 

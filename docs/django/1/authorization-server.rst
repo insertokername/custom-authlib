@@ -6,7 +6,7 @@ authorization, and issuing token credentials. When the resource owner (user)
 grants the authorization, this server will issue a token credential to the
 client.
 
-Currently, Authlib Django implementation is using cache a lot, which means
+Currently, insertokname-authlib Django implementation is using cache a lot, which means
 you don't have to handle temporary credentials, timestamp and nonce yourself,
 they are all built-in.
 
@@ -14,7 +14,7 @@ To create an authorization server, only **Client** and **Token** models are
 required::
 
     from your_project.models import Client, Token
-    from authlib.integrations.django_oauth1 import CacheAuthorizationServer
+    from insertokname-authlib.integrations.django_oauth1 import CacheAuthorizationServer
 
     authorization_server = CacheAuthorizationServer(Client, Token)
 
@@ -39,12 +39,12 @@ information:
 - Client Password, usually called **client_secret**
 - Client RSA Public Key (if RSA-SHA1 signature method supported)
 
-Authlib has no implementation for client model in Django. You need to implement
+insertokname-authlib has no implementation for client model in Django. You need to implement
 it yourself::
 
     from django.db import models
     from django.contrib.auth.models import User
-    from authlib.oauth1 import ClientMixin
+    from insertokname-authlib.oauth1 import ClientMixin
 
     class Client(models.Model, ClientMixin):
         user = models.ForeignKey(User, on_delete=CASCADE)
@@ -62,7 +62,7 @@ it yourself::
             return None
 
 A client is registered by a user (developer) on your website. Get a deep
-inside with :class:`~authlib.oauth1.rfc5849.ClientMixin` API reference.
+inside with :class:`~insertokname-authlib.oauth1.rfc5849.ClientMixin` API reference.
 
 Token
 -----
@@ -75,7 +75,7 @@ Here is an example of how it looks in Django::
 
     from django.db import models
     from django.contrib.auth.models import User
-    from authlib.oauth1 import TokenCredentialMixin
+    from insertokname-authlib.oauth1 import TokenCredentialMixin
 
     class Token(models.Model, TokenCredentialMixin):
         user = models.ForeignKey(User, on_delete=CASCADE)

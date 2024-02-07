@@ -14,7 +14,7 @@ to the authorization server.
 
 .. _RFC7636: https://tools.ietf.org/html/rfc7636
 
-.. module:: authlib.oauth2.rfc7636
+.. module:: insertokname-authlib.oauth2.rfc7636
 
 
 Using RFC7636 in Authorization Code Grant
@@ -60,7 +60,7 @@ method::
 
 Now you can register your ``AuthorizationCodeGrant`` with the extension::
 
-    from authlib.oauth2.rfc7636 import CodeChallenge
+    from insertokname-authlib.oauth2.rfc7636 import CodeChallenge
     server.register_grant(MyAuthorizationCodeGrant, [CodeChallenge(required=True)])
 
 If ``required=True``, code challenge is required for authorization code flow from public clients.
@@ -75,7 +75,7 @@ Read the **Code Challenge** section in the :ref:`frameworks_clients`.
 It is also possible to add ``code_challenge`` in ``OAuth2Session``,
 consider that we already have a ``session``::
 
-    >>> from authlib.oauth2.rfc7636 import create_s256_code_challenge
+    >>> from insertokname-authlib.oauth2.rfc7636 import create_s256_code_challenge
     >>> code_verifier = generate_token(48)
     >>> code_challenge = create_s256_code_challenge(code_verifier)
     >>> uri, state = session.create_authorization_url(authorize_url, code_challenge=code_challenge, code_challenge_method='S256')

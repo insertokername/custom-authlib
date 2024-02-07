@@ -5,7 +5,7 @@ RFC7662: OAuth 2.0 Token Introspection
 
 .. meta::
     :description: API references on RFC7009, OAuth 2.0 Token Introspection,
-        in Python via Authlib implementation.
+        in Python via insertokname-authlib implementation.
 
 This section contains the generic implementation of RFC7662_. OAuth 2.0 Token
 Introspection is usually designed to let resource servers to know content of
@@ -13,7 +13,7 @@ a token.
 
 .. _RFC7662: https://tools.ietf.org/html/rfc7662
 
-.. module:: authlib.oauth2.rfc7662
+.. module:: insertokname-authlib.oauth2.rfc7662
 
 .. _register_introspection_endpoint:
 
@@ -22,13 +22,13 @@ Register Introspection Endpoint
 
 .. versionchanged:: v1.0
 
-Authlib is designed to be very extendable, with the method of
+insertokname-authlib is designed to be very extendable, with the method of
 ``.register_endpoint`` on ``AuthorizationServer``, it is easy to add the
 introspection endpoint to the authorization server. It works on both
 :ref:`flask_oauth2_server` and :ref:`django_oauth2_server`. But first,
 we need to implement the missing methods::
 
-    from authlib.oauth2.rfc7662 import IntrospectionEndpoint
+    from insertokname-authlib.oauth2.rfc7662 import IntrospectionEndpoint
 
     class MyIntrospectionEndpoint(IntrospectionEndpoint):
         def query_token(self, token, token_type_hint):
@@ -82,7 +82,7 @@ When resource server has no access to token database, it can use introspection
 endpoint to validate the given token. Here is how::
 
     import requests
-    from authlib.oauth2.rfc7662 import IntrospectTokenValidator
+    from insertokname-authlib.oauth2.rfc7662 import IntrospectTokenValidator
     from your_project import secrets
 
     class MyIntrospectTokenValidator(IntrospectTokenValidator):

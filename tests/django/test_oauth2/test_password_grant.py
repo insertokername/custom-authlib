@@ -1,5 +1,5 @@
 import json
-from authlib.oauth2.rfc6749.grants import (
+from insertokname-authlib.oauth2.rfc6749.grants import (
     ResourceOwnerPasswordCredentialsGrant as _PasswordGrant,
 )
 

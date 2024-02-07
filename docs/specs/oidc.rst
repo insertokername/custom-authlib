@@ -13,7 +13,7 @@ how to use it in :ref:`flask_oidc_server` and :ref:`django_oidc_server`.
 OpenID Grants
 -------------
 
-.. module:: authlib.oidc.core.grants
+.. module:: insertokname-authlib.oidc.core.grants
 
 .. autoclass:: OpenIDToken
     :show-inheritance:
@@ -34,7 +34,7 @@ OpenID Grants
 OpenID Claims
 -------------
 
-.. module:: authlib.oidc.core
+.. module:: insertokname-authlib.oidc.core
 
 .. autoclass:: IDToken
     :show-inheritance:

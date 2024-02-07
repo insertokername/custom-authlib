@@ -2,9 +2,9 @@ import time
 import pytest
 from unittest import mock
 from copy import deepcopy
-from authlib.common.security import generate_token
-from authlib.common.urls import url_encode
-from authlib.integrations.httpx_client import (
+from insertokname-authlib.common.security import generate_token
+from insertokname-authlib.common.urls import url_encode
+from insertokname-authlib.integrations.httpx_client import (
     OAuthError,
     OAuth2Client,
 )

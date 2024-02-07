@@ -1,10 +1,10 @@
 OpenID Connect Core
 ===================
 
-This section is about the core part of OpenID Connect. Authlib implemented
+This section is about the core part of OpenID Connect. insertokname-authlib implemented
 `OpenID Connect Core 1.0`_ on top of OAuth 2.0. It enhanced OAuth 2.0 with:
 
-.. module:: authlib.oidc.core.grants
+.. module:: insertokname-authlib.oidc.core.grants
     :noindex:
 
 1. :class:`OpenIDCode` extension for Authorization code flow

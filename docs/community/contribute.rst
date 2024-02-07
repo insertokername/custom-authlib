@@ -2,14 +2,14 @@ Contribution
 ============
 
 Thanks for reading this section, you have a good intention. Since you are
-interested in contributing to Authlib, there are few things you need to know:
+interested in contributing to insertokname-authlib, there are few things you need to know:
 
 1. **All contributions are welcome**, as long as everyone involved is treated
    with respect.
 2. Your contribution may be rejected, but don't despair. It's just that this
-   certain pull request doesn't fit Authlib. Be brave for a next contribution.
+   certain pull request doesn't fit insertokname-authlib. Be brave for a next contribution.
 3. Some issues will be labeled as **good first issue**, if you're new to
-   Authlib, you may find these issues are a good start for contribution.
+   insertokname-authlib, you may find these issues are a good start for contribution.
 
 Bug Reports
 -----------
@@ -37,7 +37,7 @@ exceed this limit, it's OK, but no more than 110 characters.
 Make a Pull Request
 -------------------
 
-Thank you. Now that you have a fix for Authlib, please describe it clearly in
+Thank you. Now that you have a fix for insertokname-authlib, please describe it clearly in
 your pull request. There are some requirements for a pull request to be
 accepted:
 
@@ -47,18 +47,18 @@ accepted:
 
 .. note::
     By making a pull request, you consent that the copyright of your pull
-    request source code belongs to Authlib's author.
+    request source code belongs to insertokname-authlib's author.
 
 Become a Backer
 ---------------
 
-Finance support is also welcome. A better finance can make Authlib
+Finance support is also welcome. A better finance can make insertokname-authlib
 :ref:`sustainable`. Here I offer two options:
 
 1. **Recurring Pledges**
 
    Recurring pledges come with exclusive benefits, e.g. having your name
-   listed in the Authlib GitHub repository, or have your company logo placed
+   listed in the insertokname-authlib GitHub repository, or have your company logo placed
    on this website.
 
    * `Become a backer or sponsor via Patreon <https://patreon.com/lepture>`_

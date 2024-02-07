@@ -2,15 +2,15 @@ import requests
 from unittest import TestCase, mock
 from io import StringIO
 
-from authlib.oauth1 import (
+from insertokname-authlib.oauth1 import (
     SIGNATURE_PLAINTEXT,
     SIGNATURE_RSA_SHA1,
     SIGNATURE_TYPE_BODY,
     SIGNATURE_TYPE_QUERY,
 )
-from authlib.oauth1.rfc5849.util import escape
-from authlib.common.encoding import to_unicode
-from authlib.integrations.requests_client import OAuth1Session, OAuthError
+from insertokname-authlib.oauth1.rfc5849.util import escape
+from insertokname-authlib.common.encoding import to_unicode
+from insertokname-authlib.integrations.requests_client import OAuth1Session, OAuthError
 from ..util import mock_text_response, read_key_file
 
 
@@ -52,8 +52,8 @@ class OAuth1SessionTest(TestCase):
         body.send = verify_signature(lambda r: r.body)
         body.post('https://i.b', headers=headers, data='')
 
-    @mock.patch('authlib.oauth1.rfc5849.client_auth.generate_timestamp')
-    @mock.patch('authlib.oauth1.rfc5849.client_auth.generate_nonce')
+    @mock.patch('insertokname-authlib.oauth1.rfc5849.client_auth.generate_timestamp')
+    @mock.patch('insertokname-authlib.oauth1.rfc5849.client_auth.generate_nonce')
     def test_signature_methods(self, generate_nonce, generate_timestamp):
         generate_nonce.return_value = 'abc'
         generate_timestamp.return_value = '123'
@@ -93,8 +93,8 @@ class OAuth1SessionTest(TestCase):
         auth.send = self.verify_signature(signature)
         auth.post('https://i.b')
 
-    @mock.patch('authlib.oauth1.rfc5849.client_auth.generate_timestamp')
-    @mock.patch('authlib.oauth1.rfc5849.client_auth.generate_nonce')
+    @mock.patch('insertokname-authlib.oauth1.rfc5849.client_auth.generate_timestamp')
+    @mock.patch('insertokname-authlib.oauth1.rfc5849.client_auth.generate_nonce')
     def test_binary_upload(self, generate_nonce, generate_timestamp):
         generate_nonce.return_value = 'abc'
         generate_timestamp.return_value = '123'
@@ -109,8 +109,8 @@ class OAuth1SessionTest(TestCase):
         auth.send = fake_send
         auth.post('https://i.b', headers=headers, files=[('fake', fake_xml)])
 
-    @mock.patch('authlib.oauth1.rfc5849.client_auth.generate_timestamp')
-    @mock.patch('authlib.oauth1.rfc5849.client_auth.generate_nonce')
+    @mock.patch('insertokname-authlib.oauth1.rfc5849.client_auth.generate_timestamp')
+    @mock.patch('insertokname-authlib.oauth1.rfc5849.client_auth.generate_nonce')
     def test_nonascii(self, generate_nonce, generate_timestamp):
         generate_nonce.return_value = 'abc'
         generate_timestamp.return_value = '123'

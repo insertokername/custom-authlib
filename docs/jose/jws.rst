@@ -3,7 +3,7 @@
 JSON Web Signature (JWS)
 ========================
 
-.. module:: authlib.jose
+.. module:: insertokname-authlib.jose
     :noindex:
 
 JSON Web Signature (JWS) represents content secured with digital
@@ -15,7 +15,7 @@ data structures.
     We are splitting the ``jose`` module into a separated package. You may be
     interested in joserfc_.
 
-.. _joserfc: https://jose.authlib.org/en/dev/guide/jws/
+.. _joserfc: https://jose.insertokname-authlib.org/en/dev/guide/jws/
 
 
 There are two types of JWS Serializations:
@@ -87,7 +87,7 @@ Compact Serialize and Deserialize
 Generate a JWS compact serialization would be easy with
 :meth:`JsonWebSignature.serialize_compact`, build a JWS instance with JWA::
 
-    from authlib.jose import JsonWebSignature
+    from insertokname-authlib.jose import JsonWebSignature
 
     jws = JsonWebSignature()
     # alg is a required parameter name

@@ -1,5 +1,5 @@
 import unittest
-from authlib.oidc.discovery import get_well_known_url, OpenIDProviderMetadata
+from insertokname-authlib.oidc.discovery import get_well_known_url, OpenIDProviderMetadata
 
 WELL_KNOWN_URL = '/.well-known/openid-configuration'
 
@@ -7,28 +7,28 @@ WELL_KNOWN_URL = '/.well-known/openid-configuration'
 class WellKnownTest(unittest.TestCase):
     def test_no_suffix_issuer(self):
         self.assertEqual(
-            get_well_known_url('https://authlib.org'),
+            get_well_known_url('https://insertokname-authlib.org'),
             WELL_KNOWN_URL
         )
         self.assertEqual(
-            get_well_known_url('https://authlib.org/'),
+            get_well_known_url('https://insertokname-authlib.org/'),
             WELL_KNOWN_URL
         )
 
     def test_with_suffix_issuer(self):
         self.assertEqual(
-            get_well_known_url('https://authlib.org/issuer1'),
+            get_well_known_url('https://insertokname-authlib.org/issuer1'),
             '/issuer1' + WELL_KNOWN_URL
         )
         self.assertEqual(
-            get_well_known_url('https://authlib.org/a/b/c'),
+            get_well_known_url('https://insertokname-authlib.org/a/b/c'),
             '/a/b/c' + WELL_KNOWN_URL
         )
 
     def test_with_external(self):
         self.assertEqual(
-            get_well_known_url('https://authlib.org', external=True),
-            'https://authlib.org' + WELL_KNOWN_URL
+            get_well_known_url('https://insertokname-authlib.org', external=True),
+            'https://insertokname-authlib.org' + WELL_KNOWN_URL
         )
 
 
@@ -41,14 +41,14 @@ class OpenIDProviderMetadataTest(unittest.TestCase):
         self.assertEqual('"jwks_uri" is required', str(cm.exception))
 
         metadata = OpenIDProviderMetadata({
-            'jwks_uri': 'http://authlib.org/jwks.json'
+            'jwks_uri': 'http://insertokname-authlib.org/jwks.json'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_jwks_uri()
         self.assertIn('https', str(cm.exception))
 
         metadata = OpenIDProviderMetadata({
-            'jwks_uri': 'https://authlib.org/jwks.json'
+            'jwks_uri': 'https://insertokname-authlib.org/jwks.json'
         })
         metadata.validate_jwks_uri()
 

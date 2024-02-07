@@ -3,7 +3,7 @@
 JSON Web Encryption (JWE)
 =========================
 
-.. module:: authlib.jose
+.. module:: insertokname-authlib.jose
     :noindex:
 
 JSON Web Encryption (JWE) represents encrypted content using
@@ -14,14 +14,14 @@ JSON-based data structures.
     We are splitting the ``jose`` module into a separated package. You may be
     interested in joserfc_.
 
-.. _joserfc: https://jose.authlib.org/en/dev/guide/jwe/
+.. _joserfc: https://jose.insertokname-authlib.org/en/dev/guide/jwe/
 
 There are two types of JWE Serializations:
 
 1. JWE Compact Serialization
 2. JWE JSON Serialization
 
-Authlib has only implemented the **Compact Serialization**. This feature
+insertokname-authlib has only implemented the **Compact Serialization**. This feature
 is not mature yet, use at your own risk.
 
 The JWE Compact Serialization represents encrypted content as a compact,
@@ -60,7 +60,7 @@ Compact Serialize and Deserialize
 Generate a JWE compact serialization would be easy with
 :meth:`JsonWebEncryption.serialize_compact`, build a JWE instance with JWA::
 
-    from authlib.jose import JsonWebEncryption
+    from insertokname-authlib.jose import JsonWebEncryption
 
     jwe = JsonWebEncryption()
     protected = {'alg': 'RSA-OAEP', 'enc': 'A256GCM'}

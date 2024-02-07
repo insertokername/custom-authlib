@@ -1,6 +1,6 @@
 from unittest import TestCase
-from authlib.oauth2.rfc7591 import ClientMetadataClaims
-from authlib.jose.errors import InvalidClaimError
+from insertokname-authlib.oauth2.rfc7591 import ClientMetadataClaims
+from insertokname-authlib.jose.errors import InvalidClaimError
 
 
 class ClientMetadataClaimsTest(TestCase):

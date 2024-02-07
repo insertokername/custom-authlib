@@ -4,7 +4,7 @@ API References of Flask OAuth 1.0 Server
 This part of the documentation covers the interface of Flask OAuth 1.0
 Server.
 
-.. module:: authlib.integrations.flask_oauth1
+.. module:: insertokname-authlib.integrations.flask_oauth1
 
 .. autoclass:: AuthorizationServer
     :members:

@@ -1,8 +1,8 @@
 from unittest import mock
-from authlib.jose import JsonWebKey
-from authlib.oidc.core.grants.util import generate_id_token
-from authlib.integrations.django_client import OAuth, OAuthError
-from authlib.common.urls import urlparse, url_decode
+from insertokname-authlib.jose import JsonWebKey
+from insertokname-authlib.oidc.core.grants.util import generate_id_token
+from insertokname-authlib.integrations.django_client import OAuth, OAuthError
+from insertokname-authlib.common.urls import urlparse, url_decode
 from django.test import override_settings
 from tests.django_helper import TestCase
 from ..util import (
@@ -52,7 +52,7 @@ class DjangoOAuthTest(TestCase):
         self.assertEqual(
             oauth.dev_overwrite.access_token_params['foo'], 'foo-1')
 
-    @override_settings(AUTHLIB_OAUTH_CLIENTS={'dev': dev_client})
+    @override_settings(insertokname-authlib_OAUTH_CLIENTS={'dev': dev_client})
     def test_register_from_settings(self):
         oauth = OAuth()
         oauth.register('dev')

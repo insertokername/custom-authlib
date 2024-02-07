@@ -11,9 +11,9 @@ of :ref:`specs/rfc7591`.
 
 .. meta::
     :description: Python API references on RFC7592 OAuth 2.0 Dynamic Client
-        Registration Management Protocol in Python with Authlib implementation.
+        Registration Management Protocol in Python with insertokname-authlib implementation.
 
-.. module:: authlib.oauth2.rfc7592
+.. module:: insertokname-authlib.oauth2.rfc7592
 
 .. _RFC7592: https://tools.ietf.org/html/rfc7592
 
@@ -22,7 +22,7 @@ Client Configuration Endpoint
 
 Before register the endpoint, developers MUST implement the missing methods::
 
-    from authlib.oauth2.rfc7592 import ClientConfigurationEndpoint
+    from insertokname-authlib.oauth2.rfc7592 import ClientConfigurationEndpoint
 
 
     class MyClientConfigurationEndpoint(ClientConfigurationEndpoint):

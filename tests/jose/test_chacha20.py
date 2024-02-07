@@ -1,7 +1,7 @@
 import unittest
-from authlib.jose import JsonWebEncryption
-from authlib.jose import OctKey
-from authlib.jose.drafts import register_jwe_draft
+from insertokname-authlib.jose import JsonWebEncryption
+from insertokname-authlib.jose import OctKey
+from insertokname-authlib.jose.drafts import register_jwe_draft
 
 register_jwe_draft(JsonWebEncryption)
 

@@ -1,8 +1,8 @@
 from flask import json
-from authlib.common.security import generate_token
-from authlib.common.urls import urlparse, url_decode
-from authlib.oauth2.rfc6749 import grants
-from authlib.oauth2.rfc7636 import (
+from insertokname-authlib.common.security import generate_token
+from insertokname-authlib.common.urls import urlparse, url_decode
+from insertokname-authlib.oauth2.rfc6749 import grants
+from insertokname-authlib.oauth2.rfc7636 import (
     CodeChallenge as _CodeChallenge,
     create_s256_code_challenge,
 )

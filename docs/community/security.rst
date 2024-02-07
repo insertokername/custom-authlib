@@ -1,7 +1,7 @@
 Security Vulnerability
 ======================
 
-If you think you have found a potential security vulnerability in Authlib,
+If you think you have found a potential security vulnerability in insertokname-authlib,
 please email <me@lepture.com> directly.
 
 .. warning:: Do not file a public issue.

@@ -2,7 +2,7 @@ Get Started
 ===========
 
 This part of the documentation begins with some background information
-about Authlib, and installation of Authlib.
+about insertokname-authlib, and installation of insertokname-authlib.
 
 .. toctree::
     :maxdepth: 2

@@ -3,16 +3,16 @@
 
 **What kind of change does this PR introduce?** (check at least one)
 
-- [ ] Bugfix
-- [ ] Feature
-- [ ] Code style update
-- [ ] Refactor
-- [ ] Other, please describe:
+-   [ ] Bugfix
+-   [ ] Feature
+-   [ ] Code style update
+-   [ ] Refactor
+-   [ ] Other, please describe:
 
 **Does this PR introduce a breaking change?** (check one)
 
-- [ ] Yes
-- [ ] No
+-   [ ] Yes
+-   [ ] No
 
 If yes, please describe the impact and migration path for existing applications:
 
@@ -20,4 +20,4 @@ If yes, please describe the impact and migration path for existing applications:
 
 ---
 
-- [ ] You consent that the copyright of your pull request source code belongs to Authlib's author.
+-   [ ] You consent that the copyright of your pull request source code belongs to insertokname-authlib's author.

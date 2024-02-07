@@ -4,7 +4,7 @@ RFC7518: JSON Web Algorithms
 ============================
 
 .. meta::
-    :description: API references on RFC7518 JSON Web Algorithms (JWA) Authlib implementation.
+    :description: API references on RFC7518 JSON Web Algorithms (JWA) insertokname-authlib implementation.
 
 This section contains the generic implementation of RFC7518_.
 
@@ -15,7 +15,7 @@ Algorithms for JWS
 ------------------
 
 The interface for JWS Algorithms are all inherit from
-:class:`authlib.jose.JWSAlgorithm`.
+:class:`insertokname-authlib.jose.JWSAlgorithm`.
 
 Find how to use them in :ref:`jws_guide`.
 
@@ -71,8 +71,8 @@ Algorithms for JWE
 
 This section contains algorithms for JWE ``alg`` and ``enc`` header. For
 ``alg`` the interface are all inherited from
-:class:`authlib.jose.JWEAlgorithm`. For ``enc``, the interface are
-inherited from :class:`authlib.jose.JWEEncAlgorithm`.
+:class:`insertokname-authlib.jose.JWEAlgorithm`. For ``enc``, the interface are
+inherited from :class:`insertokname-authlib.jose.JWEEncAlgorithm`.
 
 Current available algorithms for ``alg``:
 

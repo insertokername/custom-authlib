@@ -36,10 +36,10 @@ resource: ``groups``, ``roles`` and ``entitlements``.
 
 This module brings tools to:
 
-- generate JWT access tokens with :class:`~authlib.oauth2.rfc9068.JWTBearerTokenGenerator`
-- protected resources endpoints and validate JWT access tokens with :class:`~authlib.oauth2.rfc9068.JWTBearerTokenValidator`
-- introspect JWT access tokens with :class:`~authlib.oauth2.rfc9068.JWTIntrospectionEndpoint`
-- deny JWT access tokens revokation attempts with :class:`~authlib.oauth2.rfc9068.JWTRevocationEndpoint`
+- generate JWT access tokens with :class:`~insertokname-authlib.oauth2.rfc9068.JWTBearerTokenGenerator`
+- protected resources endpoints and validate JWT access tokens with :class:`~insertokname-authlib.oauth2.rfc9068.JWTBearerTokenValidator`
+- introspect JWT access tokens with :class:`~insertokname-authlib.oauth2.rfc9068.JWTIntrospectionEndpoint`
+- deny JWT access tokens revokation attempts with :class:`~insertokname-authlib.oauth2.rfc9068.JWTRevocationEndpoint`
 
 .. _RFC9068: https://www.rfc-editor.org/rfc/rfc9068.html
 .. _RFC7643: https://tools.ietf.org/html/rfc7643
@@ -47,7 +47,7 @@ This module brings tools to:
 API Reference
 -------------
 
-.. module:: authlib.oauth2.rfc9068
+.. module:: insertokname-authlib.oauth2.rfc9068
 
 .. autoclass:: JWTBearerTokenGenerator
     :member-order: bysource

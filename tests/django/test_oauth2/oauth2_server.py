@@ -1,7 +1,7 @@
 import os
 import base64
-from authlib.common.encoding import to_bytes, to_unicode
-from authlib.integrations.django_oauth2 import AuthorizationServer
+from insertokname-authlib.common.encoding import to_bytes, to_unicode
+from insertokname-authlib.integrations.django_oauth2 import AuthorizationServer
 from tests.django_helper import TestCase as _TestCase
 from .models import Client, OAuth2Token
 
@@ -9,11 +9,11 @@ from .models import Client, OAuth2Token
 class TestCase(_TestCase):
     def setUp(self):
         super().setUp()
-        os.environ['AUTHLIB_INSECURE_TRANSPORT'] = 'true'
+        os.environ['insertokname-authlib_INSECURE_TRANSPORT'] = 'true'
 
     def tearDown(self):
         super().tearDown()
-        os.environ.pop('AUTHLIB_INSECURE_TRANSPORT')
+        os.environ.pop('insertokname-authlib_INSECURE_TRANSPORT')
 
     def create_server(self):
         return AuthorizationServer(Client, OAuth2Token)

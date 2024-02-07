@@ -1,9 +1,9 @@
 import pytest
 from starlette.requests import Request
-from authlib.integrations.starlette_client import OAuth
-from authlib.jose import JsonWebKey
-from authlib.jose.errors import InvalidClaimError
-from authlib.oidc.core.grants.util import generate_id_token
+from insertokname-authlib.integrations.starlette_client import OAuth
+from insertokname-authlib.jose import JsonWebKey
+from insertokname-authlib.jose.errors import InvalidClaimError
+from insertokname-authlib.oidc.core.grants.util import generate_id_token
 from ..util import get_bearer_token, read_key_file
 from ..asgi_helper import AsyncPathMapDispatch
 
@@ -92,7 +92,7 @@ async def test_runtime_error_fetch_jwks_uri():
         issuer='https://i.b',
         id_token_signing_alg_values_supported=['HS256'],
     )
-    req_scope = {'type': 'http', 'session': {'_dev_authlib_nonce_': 'n'}}
+    req_scope = {'type': 'http', 'session': {'_dev_insertokname-authlib_nonce_': 'n'}}
     req = Request(req_scope)
     token['id_token'] = id_token
     with pytest.raises(RuntimeError):

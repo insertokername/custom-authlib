@@ -1,6 +1,6 @@
 import time
 from unittest import TestCase, mock
-from authlib.integrations.requests_client import AssertionSession
+from insertokname-authlib.integrations.requests_client import AssertionSession
 
 
 class AssertionSessionTest(TestCase):

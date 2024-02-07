@@ -1,11 +1,11 @@
 import time
 from copy import deepcopy
 from unittest import TestCase, mock
-from authlib.common.security import generate_token
-from authlib.common.urls import url_encode, add_params_to_uri
-from authlib.integrations.requests_client import OAuth2Session, OAuthError
-from authlib.oauth2.rfc6749 import MismatchingStateException
-from authlib.oauth2.rfc7523 import ClientSecretJWT, PrivateKeyJWT
+from insertokname-authlib.common.security import generate_token
+from insertokname-authlib.common.urls import url_encode, add_params_to_uri
+from insertokname-authlib.integrations.requests_client import OAuth2Session, OAuthError
+from insertokname-authlib.oauth2.rfc6749 import MismatchingStateException
+from insertokname-authlib.oauth2.rfc7523 import ClientSecretJWT, PrivateKeyJWT
 from ..util import read_key_file
 
 

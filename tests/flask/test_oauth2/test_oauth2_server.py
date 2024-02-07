@@ -1,6 +1,6 @@
 from flask import json, jsonify
-from authlib.integrations.flask_oauth2 import ResourceProtector, current_token
-from authlib.integrations.sqla_oauth2 import create_bearer_token_validator
+from insertokname-authlib.integrations.flask_oauth2 import ResourceProtector, current_token
+from insertokname-authlib.integrations.sqla_oauth2 import create_bearer_token_validator
 from .models import db, User, Client, Token
 from .oauth2_server import TestCase
 from .oauth2_server import create_authorization_server

@@ -1,7 +1,7 @@
 import os
 import json
-from authlib.common.encoding import to_unicode
-from authlib.common.urls import url_decode
+from insertokname-authlib.common.encoding import to_unicode
+from insertokname-authlib.common.urls import url_decode
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 

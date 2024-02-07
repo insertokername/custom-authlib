@@ -3,7 +3,7 @@ RFC7638: JSON Web Key (JWK) Thumbprint
 
 .. versionadded:: v0.15
 
-.. automodule:: authlib.jose
+.. automodule:: insertokname-authlib.jose
 
 This RFC7638_ is used for computing a hash value over a JSON Web Key (JWK).
 The value can be used as an identity of the JWK.
@@ -13,7 +13,7 @@ The value can be used as an identity of the JWK.
 The ``.thumbprint`` method is defined on the ``Key`` class, you can use it
 directly::
 
-    from authlib.jose import JsonWebKey
+    from insertokname-authlib.jose import JsonWebKey
 
     raw = read_file('rsa.pem')
     key = JsonWebKey.import_key(raw)

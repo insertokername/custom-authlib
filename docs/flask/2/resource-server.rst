@@ -7,11 +7,11 @@ Protects users resources, so that only the authorized clients with the
 authorized access token can access the given scope resources.
 
 A resource server can be a different server other than the authorization
-server. Authlib offers a **decorator** to protect your API endpoints::
+server. insertokname-authlib offers a **decorator** to protect your API endpoints::
 
     from flask import jsonify
-    from authlib.integrations.flask_oauth2 import ResourceProtector, current_token
-    from authlib.oauth2.rfc6750 import BearerTokenValidator
+    from insertokname-authlib.integrations.flask_oauth2 import ResourceProtector, current_token
+    from insertokname-authlib.oauth2.rfc6750 import BearerTokenValidator
 
     class MyBearerTokenValidator(BearerTokenValidator):
         def authenticate_token(self, token_string):

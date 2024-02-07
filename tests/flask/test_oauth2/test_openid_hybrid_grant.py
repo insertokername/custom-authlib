@@ -1,12 +1,12 @@
 from flask import json
-from authlib.common.urls import urlparse, url_decode
-from authlib.jose import jwt
-from authlib.oidc.core import HybridIDToken
-from authlib.oidc.core.grants import (
+from insertokname-authlib.common.urls import urlparse, url_decode
+from insertokname-authlib.jose import jwt
+from insertokname-authlib.oidc.core import HybridIDToken
+from insertokname-authlib.oidc.core.grants import (
     OpenIDCode as _OpenIDCode,
     OpenIDHybridGrant as _OpenIDHybridGrant,
 )
-from authlib.oauth2.rfc6749.grants import (
+from insertokname-authlib.oauth2.rfc6749.grants import (
     AuthorizationCodeGrant as _AuthorizationCodeGrant,
 )
 from .models import db, User, Client, exists_nonce
@@ -14,7 +14,7 @@ from .models import CodeGrantMixin, save_authorization_code
 from .oauth2_server import TestCase
 from .oauth2_server import create_authorization_server
 
-JWT_CONFIG = {'iss': 'Authlib', 'key': 'secret', 'alg': 'HS256', 'exp': 3600}
+JWT_CONFIG = {'iss': 'insertokname-authlib', 'key': 'secret', 'alg': 'HS256', 'exp': 3600}
 
 
 class AuthorizationCodeGrant(CodeGrantMixin, _AuthorizationCodeGrant):

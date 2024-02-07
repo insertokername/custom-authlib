@@ -3,7 +3,7 @@
 Funding
 =======
 
-If you use Authlib and its related projects commercially we strongly
+If you use insertokname-authlib and its related projects commercially we strongly
 encourage you to invest in its **sustainable** development by sponsorship.
 
 We accept funding with paid license and sponsorship. With the funding, it
@@ -15,7 +15,7 @@ will:
 And you can also get benefits from us:
 
 1. access to some of our private repositories
-2. access to our `private PyPI <https://authlib.org/pypi>`_.
+2. access to our `private PyPI <https://insertokname-authlib.org/pypi>`_.
 3. join our security mail list.
 
 Get more details on our sponsor tiers page at:
@@ -29,7 +29,7 @@ Insiders
 Insiders are people who have access to our private repositories, you can become
 an insider with:
 
-1. purchasing a paid license at https://authlib.org/plans
+1. purchasing a paid license at https://insertokname-authlib.org/plans
 2. Become a sponsor with tiers including "Access to our private repos" benefit
 
 PyPI
@@ -38,7 +38,7 @@ PyPI
 We offer a private PyPI server to release early security fixes and features.
 You can find more details about this PyPI server at:
 
-https://authlib.org/pypi
+https://insertokname-authlib.org/pypi
 
 Goals
 -----
@@ -64,7 +64,7 @@ When the demo is complete, source code of the demo will only be available to our
 Funding Goal: $5000/month
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In Authlib v2.0, we will start working on async provider integrations.
+In insertokname-authlib v2.0, we will start working on async provider integrations.
 
 * :bdg-warning:`todo` Starlette (FastAPI) OAuth 1.0 provider integration
 * :bdg-warning:`todo` Starlette (FastAPI) OAuth 2.0 provider integration
@@ -73,7 +73,7 @@ In Authlib v2.0, we will start working on async provider integrations.
 Funding Goal: $9000/month
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In Authlib v3.0, we will add built-in support for SAML.
+In insertokname-authlib v3.0, we will add built-in support for SAML.
 
 * :bdg-warning:`todo` SAML 2.0 implementation
 * :bdg-warning:`todo` RFC7522 (SAML) 2.0 Profile for OAuth 2.0 Client Authentication and Authorization Grants

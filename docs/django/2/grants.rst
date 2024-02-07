@@ -6,7 +6,7 @@ Register Grants
         Resource Owner Password Credentials Grant, Client Credentials Grant
         and Refresh Token Grant into Django OAuth 2.0 provider.
 
-.. module:: authlib.oauth2.rfc6749.grants
+.. module:: insertokname-authlib.oauth2.rfc6749.grants
     :noindex:
 
 There are four grant types defined by RFC6749, you can also create your own
@@ -25,7 +25,7 @@ kept in a database or a cache like redis. Here is an example of database
 
     from django.db.models import ForeignKey, CASCADE
     from django.contrib.auth.models import User
-    from authlib.oauth2.rfc6749 import AuthorizationCodeMixin
+    from insertokname-authlib.oauth2.rfc6749 import AuthorizationCodeMixin
 
     def now_timestamp():
         return int(time.time())
@@ -52,13 +52,13 @@ kept in a database or a cache like redis. Here is an example of database
             return self.auth_time
 
 Note here, you **MUST** implement the missing methods of
-:class:`~authlib.oauth2.rfc6749.AuthorizationCodeMixin` API interface.
+:class:`~insertokname-authlib.oauth2.rfc6749.AuthorizationCodeMixin` API interface.
 
 Later, you can use this ``AuthorizationCode`` database model to handle ``authorization_code``
 grant type. Here is how::
 
-    from authlib.oauth2.rfc6749 import grants
-    from authlib.common.security import generate_token
+    from insertokname-authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.common.security import generate_token
 
     class AuthorizationCodeGrant(grants.AuthorizationCodeGrant):
         def save_authorization_code(self, code, request):
@@ -115,7 +115,7 @@ owner granted the access, access token is issued in the redirect URI,
 there is no missing implementation, which means it can be easily registered
 with::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
 
     # register it to grant endpoint
     server.register_grant(grants.ImplicitGrant)
@@ -130,7 +130,7 @@ Resource owner uses their username and password to exchange an access token,
 this grant type should be used only when the client is trustworthy, implement
 it with a subclass of :class:`ResourceOwnerPasswordCredentialsGrant`::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
     from django.contrib.auth.models import User
 
     class PasswordGrant(grants.ResourceOwnerPasswordCredentialsGrant):
@@ -159,7 +159,7 @@ Client Credentials Grant
 Client credentials grant type can access public resources and the
 client's creator's resources. It can be easily registered with::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
 
     # register it to grant endpoint
     server.register_grant(grants.ClientCredentialsGrant)
@@ -175,11 +175,11 @@ You can add more in the subclass::
 Refresh Token Grant
 -------------------
 
-Many OAuth 2 providers haven't implemented refresh token endpoint. Authlib
+Many OAuth 2 providers haven't implemented refresh token endpoint. insertokname-authlib
 provides it as a grant type, implement it with a subclass of
 :class:`RefreshTokenGrant`::
 
-    from authlib.oauth2.rfc6749 import grants
+    from insertokname-authlib.oauth2.rfc6749 import grants
 
     class RefreshTokenGrant(grants.RefreshTokenGrant):
         def authenticate_refresh_token(self, refresh_token):
@@ -217,7 +217,7 @@ response. Developers can change this behavior with::
 Custom Grant Types
 ------------------
 
-It is also possible to create your own grant types. In Authlib, a **Grant**
+It is also possible to create your own grant types. In insertokname-authlib, a **Grant**
 supports two endpoints:
 
 1. Authorization Endpoint: which can handle requests with ``response_type``.
@@ -225,7 +225,7 @@ supports two endpoints:
 
 Creating a custom grant type with **BaseGrant**::
 
-    from authlib.oauth2.rfc6749.grants import (
+    from insertokname-authlib.oauth2.rfc6749.grants import (
         BaseGrant, AuthorizationEndpointMixin, TokenEndpointMixin
     )
 
@@ -258,7 +258,7 @@ grant::
 
     server.register_grant(AuthorizationCodeGrant, [extension])
 
-For instance, there is ``CodeChallenge`` extension in Authlib::
+For instance, there is ``CodeChallenge`` extension in insertokname-authlib::
 
     server.register_grant(AuthorizationCodeGrant, [CodeChallenge(required=False)])
 

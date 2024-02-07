@@ -3,7 +3,7 @@ Authorization Server
 
 .. meta::
     :description: How to create a Django OAuth 2.0 Authorization server with
-        Authlib. Learn the required concepts in OAuth 2.0 Authorization server.
+        insertokname-authlib. Learn the required concepts in OAuth 2.0 Authorization server.
 
 The Authorization Server provides several endpoints for authorization, issuing
 tokens, refreshing tokens and revoking tokens. When the resource owner (user)
@@ -38,7 +38,7 @@ information:
 - Client Token Endpoint Authentication Method
 
 A client is registered by a user (developer) on your website; you MUST implement
-the missing methods of :class:`~authlib.oauth2.rfc6749.ClientMixin`::
+the missing methods of :class:`~insertokname-authlib.oauth2.rfc6749.ClientMixin`::
 
     class OAuth2Client(Model, ClientMixin):
         user = ForeignKey(User, on_delete=CASCADE)
@@ -102,7 +102,7 @@ valid duration, limited scopes and etc. It contains at least:
 - **scope**: a limited scope of resources that this token can access
 
 A token is associated with a resource owner; you MUST implement
-the missing methods of :class:`~authlib.oauth2.rfc6749.TokenMixin`::
+the missing methods of :class:`~insertokname-authlib.oauth2.rfc6749.TokenMixin`::
 
     import time
 
@@ -135,10 +135,10 @@ the missing methods of :class:`~authlib.oauth2.rfc6749.TokenMixin`::
 Server
 ------
 
-Authlib provides a ready to use :class:`~authlib.integrations.django_oauth2.AuthorizationServer`
+insertokname-authlib provides a ready to use :class:`~insertokname-authlib.integrations.django_oauth2.AuthorizationServer`
 which has built-in tools to handle requests and responses::
 
-    from authlib.integrations.django_oauth2 import AuthorizationServer
+    from insertokname-authlib.integrations.django_oauth2 import AuthorizationServer
 
     server = AuthorizationServer(OAuth2Client, OAuth2Token)
 

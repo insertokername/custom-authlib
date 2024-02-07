@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = Authlib
+SPHINXPROJ    = insertokname-authlib
 SOURCEDIR     = .
 BUILDDIR      = _build
 

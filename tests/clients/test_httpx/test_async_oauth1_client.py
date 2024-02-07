@@ -1,5 +1,5 @@
 import pytest
-from authlib.integrations.httpx_client import (
+from insertokname-authlib.integrations.httpx_client import (
     OAuthError,
     AsyncOAuth1Client,
     SIGNATURE_TYPE_BODY,

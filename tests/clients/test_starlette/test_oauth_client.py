@@ -1,8 +1,8 @@
 import pytest
 from starlette.config import Config
 from starlette.requests import Request
-from authlib.common.urls import urlparse, url_decode
-from authlib.integrations.starlette_client import OAuth, OAuthError
+from insertokname-authlib.common.urls import urlparse, url_decode
+from insertokname-authlib.integrations.starlette_client import OAuth, OAuthError
 from ..asgi_helper import AsyncPathMapDispatch
 from ..util import get_bearer_token
 

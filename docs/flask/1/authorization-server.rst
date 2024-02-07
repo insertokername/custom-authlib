@@ -35,10 +35,10 @@ information:
 - Client Password, usually called **client_secret**
 - Client RSA Public Key (if RSA-SHA1 signature method supported)
 
-Developers MUST implement the missing methods of ``authlib.oauth1.ClientMixin``, take an
+Developers MUST implement the missing methods of ``insertokname-authlib.oauth1.ClientMixin``, take an
 example of Flask-SQAlchemy::
 
-    from authlib.oauth1 import ClientMixin
+    from insertokname-authlib.oauth1 import ClientMixin
 
     class Client(ClientMixin, db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -60,7 +60,7 @@ example of Flask-SQAlchemy::
             return None
 
 A client is registered by a user (developer) on your website. Get a deep
-inside with :class:`~authlib.oauth1.rfc5849.ClientMixin` API reference.
+inside with :class:`~insertokname-authlib.oauth1.rfc5849.ClientMixin` API reference.
 
 Temporary Credentials
 ---------------------
@@ -77,7 +77,7 @@ methods:
 A cache can be a memcache, redis or something else. If cache is not available,
 developers can also implement it with database. For example, using SQLAlchemy::
 
-    from authlib.oauth1 import TemporaryCredentialMixin
+    from insertokname-authlib.oauth1 import TemporaryCredentialMixin
 
     class TemporaryCredential(TemporaryCredentialMixin, db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -114,10 +114,10 @@ A token credential is used to access resource owners' resources. Unlike
 OAuth 2, the token credential will not expire in OAuth 1. This token credentials
 are supposed to be saved into a persist database rather than a cache.
 
-Developers MUST implement :class:`~authlib.oauth1.rfc5849.TokenCredentialMixin`
+Developers MUST implement :class:`~insertokname-authlib.oauth1.rfc5849.TokenCredentialMixin`
 missing methods. Here is an example of SQLAlchemy integration::
 
-    from authlib.oauth1 import TokenCredentialMixin
+    from insertokname-authlib.oauth1 import TokenCredentialMixin
 
     class TokenCredential(TokenCredentialMixin, db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -140,7 +140,7 @@ Timestamp and Nonce
 -------------------
 
 The nonce value MUST be unique across all requests with the same timestamp,
-client credentials, and token combinations. Authlib Flask integration has a
+client credentials, and token combinations. insertokname-authlib Flask integration has a
 built-in validation with cache.
 
 If cache is not available, developers can use a database, here is an example of
@@ -163,11 +163,11 @@ using SQLAlchemy::
 Define A Server
 ---------------
 
-Authlib provides a ready to use
-:class:`~authlib.integrations.flask_oauth1.AuthorizationServer`
+insertokname-authlib provides a ready to use
+:class:`~insertokname-authlib.integrations.flask_oauth1.AuthorizationServer`
 which has built-in tools to handle requests and responses::
 
-    from authlib.integrations.flask_oauth1 import AuthorizationServer
+    from insertokname-authlib.integrations.flask_oauth1 import AuthorizationServer
 
     def query_client(client_id):
         return Client.query.filter_by(client_id=client_id).first()
@@ -221,7 +221,7 @@ There are missing hooks that should be ``register_hook`` to AuthorizationServer.
 There are helper functions for registering hooks. If cache is available, you
 can take the advantage with::
 
-    from authlib.integrations.flask_oauth1.cache import (
+    from insertokname-authlib.integrations.flask_oauth1.cache import (
         register_nonce_hooks,
         register_temporary_credential_hooks
     )

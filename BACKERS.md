@@ -9,7 +9,7 @@ Many thanks to these awesome sponsors and backers.
 <table>
 <tr>
 <td><img align="middle" width="48" src="https://user-images.githubusercontent.com/290496/39297078-89d00928-497d-11e8-8119-0c53afe14cd0.png"></td>
-<td>If you want to quickly add secure token-based authentication to Python projects, feel free to check Auth0's Python SDK and free plan at <a href="https://auth0.com/overview?utm_source=GHsponsor&utm_medium=GHsponsor&utm_campaign=authlib&utm_content=auth">auth0.com/overview</a>.</td>
+<td>If you want to quickly add secure token-based authentication to Python projects, feel free to check Auth0's Python SDK and free plan at <a href="https://auth0.com/overview?utm_source=GHsponsor&utm_medium=GHsponsor&utm_campaign=insertokname-authlib&utm_content=auth">auth0.com/overview</a>.</td>
 </tr>
 <tr>
 <td><img align="middle" width="48" src="https://user-images.githubusercontent.com/290496/67944168-33843980-fc1f-11e9-8f69-6a7515344b92.png"></td>

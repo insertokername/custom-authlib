@@ -1,6 +1,6 @@
 import time
 from flask import json
-from authlib.oauth2.rfc6749.grants import (
+from insertokname-authlib.oauth2.rfc6749.grants import (
     RefreshTokenGrant as _RefreshTokenGrant,
 )
 from .models import db, User, Client, Token

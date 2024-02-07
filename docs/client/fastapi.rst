@@ -4,10 +4,10 @@ FastAPI OAuth Client
 ====================
 
 .. meta::
-    :description: Use Authlib built-in Starlette integrations to build
+    :description: Use insertokname-authlib built-in Starlette integrations to build
         OAuth 1.0, OAuth 2.0 and OpenID Connect clients for FastAPI.
 
-.. module:: authlib.integrations.starlette_client
+.. module:: insertokname-authlib.integrations.starlette_client
     :noindex:
 
 FastAPI_ is a modern, fast (high-performance), web framework for building
@@ -27,8 +27,8 @@ Here is how you would create a FastAPI application::
     # we need this to save temporary code & state in session
     app.add_middleware(SessionMiddleware, secret_key="some-random-string")
 
-Since Authlib starlette requires using ``request`` instance, we need to
-expose that ``request`` to Authlib. According to the documentation on
+Since insertokname-authlib starlette requires using ``request`` instance, we need to
+expose that ``request`` to insertokname-authlib. According to the documentation on
 `Using the Request Directly <https://fastapi.tiangolo.com/advanced/using-request-directly/>`_::
 
     from starlette.requests import Request
@@ -53,12 +53,12 @@ FastAPI OAuth 1.0 Client
 
 We have a blog post about how to create Twitter login in FastAPI:
 
-https://blog.authlib.org/2020/fastapi-twitter-login
+https://blog.insertokname-authlib.org/2020/fastapi-twitter-login
 
 FastAPI OAuth 2.0 Client
 ------------------------
 
 We have a blog post about how to create Google login in FastAPI:
 
-https://blog.authlib.org/2020/fastapi-google-login
+https://blog.insertokname-authlib.org/2020/fastapi-google-login
 

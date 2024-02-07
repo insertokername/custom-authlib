@@ -12,21 +12,21 @@ from .models import Token
 from .models import User
 from .oauth2_server import create_authorization_server
 from .oauth2_server import TestCase
-from authlib.common.security import generate_token
-from authlib.common.urls import url_decode
-from authlib.common.urls import urlparse
-from authlib.integrations.flask_oauth2 import current_token
-from authlib.integrations.flask_oauth2 import ResourceProtector
-from authlib.jose import jwt
-from authlib.oauth2.rfc6749.grants import (
+from insertokname-authlib.common.security import generate_token
+from insertokname-authlib.common.urls import url_decode
+from insertokname-authlib.common.urls import urlparse
+from insertokname-authlib.integrations.flask_oauth2 import current_token
+from insertokname-authlib.integrations.flask_oauth2 import ResourceProtector
+from insertokname-authlib.jose import jwt
+from insertokname-authlib.oauth2.rfc6749.grants import (
     AuthorizationCodeGrant as _AuthorizationCodeGrant,
 )
-from authlib.oauth2.rfc7009 import RevocationEndpoint
-from authlib.oauth2.rfc7662 import IntrospectionEndpoint
-from authlib.oauth2.rfc9068 import JWTBearerTokenGenerator
-from authlib.oauth2.rfc9068 import JWTBearerTokenValidator
-from authlib.oauth2.rfc9068 import JWTIntrospectionEndpoint
-from authlib.oauth2.rfc9068 import JWTRevocationEndpoint
+from insertokname-authlib.oauth2.rfc7009 import RevocationEndpoint
+from insertokname-authlib.oauth2.rfc7662 import IntrospectionEndpoint
+from insertokname-authlib.oauth2.rfc9068 import JWTBearerTokenGenerator
+from insertokname-authlib.oauth2.rfc9068 import JWTBearerTokenValidator
+from insertokname-authlib.oauth2.rfc9068 import JWTIntrospectionEndpoint
+from insertokname-authlib.oauth2.rfc9068 import JWTRevocationEndpoint
 from tests.util import read_file_path
 
 
@@ -208,7 +208,7 @@ class AuthorizationCodeGrant(CodeGrantMixin, _AuthorizationCodeGrant):
 class JWTAccessTokenGenerationTest(TestCase):
     def setUp(self):
         super().setUp()
-        self.issuer = 'https://authlib.org/'
+        self.issuer = 'https://insertokname-authlib.org/'
         self.jwks = read_file_path('jwks_private.json')
         self.authorization_server = create_authorization_server(self.app)
         self.authorization_server.register_grant(AuthorizationCodeGrant)
@@ -594,7 +594,7 @@ class JWTAccessTokenResourceServerTest(TestCase):
 class JWTAccessTokenIntrospectionTest(TestCase):
     def setUp(self):
         super().setUp()
-        self.issuer = 'https://authlib.org/'
+        self.issuer = 'https://insertokname-authlib.org/'
         self.resource_server = 'resource-server-id'
         self.jwks = read_file_path('jwks_private.json')
         self.authorization_server = create_authorization_server(self.app)
@@ -748,7 +748,7 @@ class JWTAccessTokenIntrospectionTest(TestCase):
 class JWTAccessTokenRevocationTest(TestCase):
     def setUp(self):
         super().setUp()
-        self.issuer = 'https://authlib.org/'
+        self.issuer = 'https://insertokname-authlib.org/'
         self.resource_server = 'resource-server-id'
         self.jwks = read_file_path('jwks_private.json')
         self.authorization_server = create_authorization_server(self.app)

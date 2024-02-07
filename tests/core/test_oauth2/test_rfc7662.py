@@ -1,5 +1,5 @@
 import unittest
-from authlib.oauth2.rfc7662 import IntrospectionToken
+from insertokname-authlib.oauth2.rfc7662 import IntrospectionToken
 
 
 class IntrospectionTokenTest(unittest.TestCase):

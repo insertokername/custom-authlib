@@ -35,9 +35,9 @@ information:
 - Client Password, usually called **client_secret**
 - Client Token Endpoint Authentication Method
 
-Authlib has provided a mixin for SQLAlchemy, define the client with this mixin::
+insertokname-authlib has provided a mixin for SQLAlchemy, define the client with this mixin::
 
-    from authlib.integrations.sqla_oauth2 import OAuth2ClientMixin
+    from insertokname-authlib.integrations.sqla_oauth2 import OAuth2ClientMixin
 
     class Client(Model, OAuth2ClientMixin):
         id = Column(Integer, primary_key=True)
@@ -48,7 +48,7 @@ Authlib has provided a mixin for SQLAlchemy, define the client with this mixin::
 
 A client is registered by a user (developer) on your website. If you decide to
 implement all the missing methods by yourself, get a deep inside with
-:class:`~authlib.oauth2.rfc6749.ClientMixin` API reference.
+:class:`~insertokname-authlib.oauth2.rfc6749.ClientMixin` API reference.
 
 Token
 -----
@@ -67,9 +67,9 @@ valid duration, limited scopes and etc. It contains at least:
 - **expires_at**: when will this token expired
 - **scope**: a limited scope of resources that this token can access
 
-With the SQLAlchemy mixin provided by Authlib::
+With the SQLAlchemy mixin provided by insertokname-authlib::
 
-    from authlib.integrations.sqla_oauth2 import OAuth2TokenMixin
+    from insertokname-authlib.integrations.sqla_oauth2 import OAuth2TokenMixin
 
     class Token(db.Model, OAuth2TokenMixin):
         id = db.Column(db.Integer, primary_key=True)
@@ -82,16 +82,16 @@ A token is associated with a resource owner. There is no certain name for
 it, here we call it ``user``, but it can be anything else.
 
 If you decide to implement all the missing methods by yourself, get a deep
-inside the :class:`~authlib.oauth2.rfc6749.TokenMixin` API reference.
+inside the :class:`~insertokname-authlib.oauth2.rfc6749.TokenMixin` API reference.
 
 Server
 ------
 
-Authlib provides a ready to use
-:class:`~authlib.integrations.flask_oauth2.AuthorizationServer`
+insertokname-authlib provides a ready to use
+:class:`~insertokname-authlib.integrations.flask_oauth2.AuthorizationServer`
 which has built-in tools to handle requests and responses::
 
-    from authlib.integrations.flask_oauth2 import AuthorizationServer
+    from insertokname-authlib.integrations.flask_oauth2 import AuthorizationServer
 
     def query_client(client_id):
         return Client.query.filter_by(client_id=client_id).first()
@@ -113,7 +113,7 @@ which has built-in tools to handle requests and responses::
         db.session.commit()
 
     # or with the helper
-    from authlib.integrations.sqla_oauth2 import (
+    from insertokname-authlib.integrations.sqla_oauth2 import (
         create_query_client_func,
         create_save_token_func
     )
@@ -194,7 +194,7 @@ Now define an endpoint for authorization. This endpoint is used by
         return server.create_authorization_response(grant_user=None)
 
 This is a simple demo, the real case should be more complex. There is a little
-more complex demo in https://github.com/authlib/example-oauth2-server.
+more complex demo in https://github.com/insertokname-authlib/example-oauth2-server.
 
 The token endpoint is much easier::
 

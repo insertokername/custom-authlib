@@ -6,12 +6,12 @@ OAuth for Requests
 
 .. meta::
     :description: An OAuth 1.0 and OAuth 2.0 Client implementation for Python requests,
-        including support for OpenID Connect and service account, powered by Authlib.
+        including support for OpenID Connect and service account, powered by insertokname-authlib.
 
-.. module:: authlib.integrations.requests_client
+.. module:: insertokname-authlib.integrations.requests_client
     :noindex:
 
-Requests is a very popular HTTP library for Python. Authlib enables OAuth 1.0
+Requests is a very popular HTTP library for Python. insertokname-authlib enables OAuth 1.0
 and OAuth 2.0 for Requests with its :class:`OAuth1Session`, :class:`OAuth2Session`
 and :class:`AssertionSession`.
 
@@ -59,7 +59,7 @@ In :ref:`oauth_2_session`, there are many grant types, including:
 3. Password Flow
 4. Client Credentials Flow
 
-And also, Authlib supports non Standard OAuth 2.0 providers via Compliance Fix.
+And also, insertokname-authlib supports non Standard OAuth 2.0 providers via Compliance Fix.
 
 Follow the common guide of :ref:`oauth_2_session` to find out how to use
 requests integration of OAuth 2.0 flow.
@@ -72,8 +72,8 @@ There are **three default client authentication methods** defined for
 ``OAuth2Session``. But what if you want to use ``client_secret_jwt`` instead?
 ``client_secret_jwt`` is defined in RFC7523, use it for Requests::
 
-    from authlib.integrations.requests_client import OAuth2Session
-    from authlib.oauth2.rfc7523 import ClientSecretJWT
+    from insertokname-authlib.integrations.requests_client import OAuth2Session
+    from insertokname-authlib.oauth2.rfc7523 import ClientSecretJWT
 
     token_endpoint = 'https://example.com/oauth/token'
     session = OAuth2Session(
@@ -90,8 +90,8 @@ Using ``private_key_jwt`` in Requests
 What if you want to use ``private_key_jwt`` client authentication method,
 here is the way with  ``PrivateKeyJWT`` for Requests::
 
-    from authlib.integrations.requests_client import OAuth2Session
-    from authlib.oauth2.rfc7523 import PrivateKeyJWT
+    from insertokname-authlib.integrations.requests_client import OAuth2Session
+    from insertokname-authlib.oauth2.rfc7523 import PrivateKeyJWT
 
     with open('your-private-key.pem', 'rb') as f:
         private_key = f.read()
@@ -122,7 +122,7 @@ Requests OpenID Connect
 -----------------------
 
 OpenID Connect is built on OAuth 2.0. It is pretty simple to communicate with
-an OpenID Connect provider via Authlib. With Authlib built-in OAuth 2.0 system
+an OpenID Connect provider via insertokname-authlib. With insertokname-authlib built-in OAuth 2.0 system
 and JsonWebToken (JWT), parsing OpenID Connect ``id_token`` could be very easy.
 
 Understand how it works with :ref:`oidc_session`.

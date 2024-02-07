@@ -1,9 +1,9 @@
-from authlib.jose import JsonWebToken
-from authlib.oidc.core import ImplicitIDToken
-from authlib.oidc.core.grants import (
+from insertokname-authlib.jose import JsonWebToken
+from insertokname-authlib.oidc.core import ImplicitIDToken
+from insertokname-authlib.oidc.core.grants import (
     OpenIDImplicitGrant as _OpenIDImplicitGrant
 )
-from authlib.common.urls import urlparse, url_decode, add_params_to_uri
+from insertokname-authlib.common.urls import urlparse, url_decode, add_params_to_uri
 from .models import db, User, Client, exists_nonce
 from .oauth2_server import TestCase
 from .oauth2_server import create_authorization_server
@@ -11,7 +11,7 @@ from .oauth2_server import create_authorization_server
 
 class OpenIDImplicitGrant(_OpenIDImplicitGrant):
     def get_jwt_config(self):
-        return dict(key='secret', alg='HS256', iss='Authlib', exp=3600)
+        return dict(key='secret', alg='HS256', iss='insertokname-authlib', exp=3600)
 
     def generate_user_info(self, user, scopes):
         return user.generate_user_info(scopes)

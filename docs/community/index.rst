@@ -1,7 +1,7 @@
 Community
 =========
 
-This section aims to make Authlib sustainable, on governance, code commits,
+This section aims to make insertokname-authlib sustainable, on governance, code commits,
 issues and finance.
 
 

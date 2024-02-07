@@ -1,6 +1,6 @@
 import time
 from flask import json
-from authlib.oauth2.rfc8628 import (
+from insertokname-authlib.oauth2.rfc8628 import (
     DeviceAuthorizationEndpoint as _DeviceAuthorizationEndpoint,
     DeviceCodeGrant as _DeviceCodeGrant,
     DeviceCredentialDict,

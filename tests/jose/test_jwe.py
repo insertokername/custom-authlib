@@ -2,13 +2,13 @@ import json
 import os
 import unittest
 from cryptography.hazmat.primitives.keywrap import InvalidUnwrap
-from authlib.common.encoding import urlsafe_b64encode, json_b64encode, to_bytes, to_unicode
-from authlib.jose import JsonWebEncryption
-from authlib.jose import OctKey, OKPKey
-from authlib.jose import errors
-from authlib.jose.drafts import register_jwe_draft
-from authlib.jose.errors import InvalidAlgorithmForMultipleRecipientsMode, DecodeError, InvalidHeaderParameterNameError
-from authlib.jose.util import extract_header
+from insertokname-authlib.common.encoding import urlsafe_b64encode, json_b64encode, to_bytes, to_unicode
+from insertokname-authlib.jose import JsonWebEncryption
+from insertokname-authlib.jose import OctKey, OKPKey
+from insertokname-authlib.jose import errors
+from insertokname-authlib.jose.drafts import register_jwe_draft
+from insertokname-authlib.jose.errors import InvalidAlgorithmForMultipleRecipientsMode, DecodeError, InvalidHeaderParameterNameError
+from insertokname-authlib.jose.util import extract_header
 from tests.util import read_file_path
 
 register_jwe_draft(JsonWebEncryption)

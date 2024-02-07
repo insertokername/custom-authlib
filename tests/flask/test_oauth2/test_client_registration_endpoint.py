@@ -1,6 +1,6 @@
 from flask import json
-from authlib.jose import jwt
-from authlib.oauth2.rfc7591 import ClientRegistrationEndpoint as _ClientRegistrationEndpoint
+from insertokname-authlib.jose import jwt
+from insertokname-authlib.oauth2.rfc7591 import ClientRegistrationEndpoint as _ClientRegistrationEndpoint
 from tests.util import read_file_path
 from .models import db, User, Client
 from .oauth2_server import TestCase
@@ -68,15 +68,15 @@ class ClientRegistrationTest(TestCase):
         self.prepare_data()
         headers = {'Authorization': 'bearer abc'}
         body = {
-            'client_name': 'Authlib'
+            'client_name': 'insertokname-authlib'
         }
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn('client_id', resp)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
     def test_software_statement(self):
-        payload = {'software_id': 'uuid-123', 'client_name': 'Authlib'}
+        payload = {'software_id': 'uuid-123', 'client_name': 'insertokname-authlib'}
         s = jwt.encode({'alg': 'RS256'}, payload, read_file_path('rsa_private.pem'))
         body = {
             'software_statement': s.decode('utf-8'),
@@ -87,7 +87,7 @@ class ClientRegistrationTest(TestCase):
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn('client_id', resp)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
     def test_no_public_key(self):
 
@@ -98,7 +98,7 @@ class ClientRegistrationTest(TestCase):
             def resolve_public_key(self, request):
                 return None
 
-        payload = {'software_id': 'uuid-123', 'client_name': 'Authlib'}
+        payload = {'software_id': 'uuid-123', 'client_name': 'insertokname-authlib'}
         s = jwt.encode({'alg': 'RS256'}, payload, read_file_path('rsa_private.pem'))
         body = {
             'software_statement': s.decode('utf-8'),
@@ -115,13 +115,13 @@ class ClientRegistrationTest(TestCase):
         self.prepare_data(metadata=metadata)
 
         headers = {'Authorization': 'bearer abc'}
-        body = {'scope': 'profile email', 'client_name': 'Authlib'}
+        body = {'scope': 'profile email', 'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn('client_id', resp)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
-        body = {'scope': 'profile email address', 'client_name': 'Authlib'}
+        body = {'scope': 'profile email address', 'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn(resp['error'], 'invalid_client_metadata')
@@ -131,22 +131,22 @@ class ClientRegistrationTest(TestCase):
         self.prepare_data(metadata=metadata)
 
         headers = {'Authorization': 'bearer abc'}
-        body = {'response_types': ['code'], 'client_name': 'Authlib'}
+        body = {'response_types': ['code'], 'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn('client_id', resp)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
         # https://www.rfc-editor.org/rfc/rfc7591.html#section-2
         # If omitted, the default is that the client will use only the "code"
         # response type.
-        body = {'client_name': 'Authlib'}
+        body = {'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn('client_id', resp)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
-        body = {'response_types': ['code', 'token'], 'client_name': 'Authlib'}
+        body = {'response_types': ['code', 'token'], 'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn(resp['error'], 'invalid_client_metadata')
@@ -156,22 +156,22 @@ class ClientRegistrationTest(TestCase):
         self.prepare_data(metadata=metadata)
 
         headers = {'Authorization': 'bearer abc'}
-        body = {'grant_types': ['password'], 'client_name': 'Authlib'}
+        body = {'grant_types': ['password'], 'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn('client_id', resp)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
         # https://www.rfc-editor.org/rfc/rfc7591.html#section-2
         # If omitted, the default behavior is that the client will use only
         # the "authorization_code" Grant Type.
-        body = {'client_name': 'Authlib'}
+        body = {'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn('client_id', resp)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
-        body = {'grant_types': ['client_credentials'], 'client_name': 'Authlib'}
+        body = {'grant_types': ['client_credentials'], 'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn(resp['error'], 'invalid_client_metadata')
@@ -181,13 +181,13 @@ class ClientRegistrationTest(TestCase):
         self.prepare_data(metadata=metadata)
 
         headers = {'Authorization': 'bearer abc'}
-        body = {'token_endpoint_auth_method': 'client_secret_basic', 'client_name': 'Authlib'}
+        body = {'token_endpoint_auth_method': 'client_secret_basic', 'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn('client_id', resp)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
-        body = {'token_endpoint_auth_method': 'none', 'client_name': 'Authlib'}
+        body = {'token_endpoint_auth_method': 'none', 'client_name': 'insertokname-authlib'}
         rv = self.client.post('/create_client', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertIn(resp['error'], 'invalid_client_metadata')

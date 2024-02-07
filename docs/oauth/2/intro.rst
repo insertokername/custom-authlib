@@ -65,14 +65,14 @@ server with the grant of the resource owner.
 Grant Types
 -----------
 
-.. module:: authlib.oauth2.rfc6749.grants
+.. module:: insertokname-authlib.oauth2.rfc6749.grants
     :noindex:
 
 Authorization server MAY supports several **grant types** during the **authorization**,
 step 1 and 2. A grant type defines a way of how the authorization server will verify
 the request and issue the token.
 
-There are lots of built-in grant types in Authlib, including:
+There are lots of built-in grant types in insertokname-authlib, including:
 
 - :class:`AuthorizationCodeGrant`
 - :class:`ImplicitGrant`

@@ -1,7 +1,7 @@
 import time
 from flask import json
-from authlib.oauth1.rfc5849 import signature
-from authlib.common.urls import add_params_to_uri
+from insertokname-authlib.oauth1.rfc5849 import signature
+from insertokname-authlib.common.urls import add_params_to_uri
 from tests.util import read_file_path
 from .oauth1_server import db, User, Client, TokenCredential
 from .oauth1_server import (

@@ -1,8 +1,8 @@
 import unittest
 import base64
-from authlib.oauth2.rfc6749 import parameters
-from authlib.oauth2.rfc6749 import util
-from authlib.oauth2.rfc6749 import errors
+from insertokname-authlib.oauth2.rfc6749 import parameters
+from insertokname-authlib.oauth2.rfc6749 import util
+from insertokname-authlib.oauth2.rfc6749 import errors
 
 
 class OAuth2ParametersTest(unittest.TestCase):

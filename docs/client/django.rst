@@ -5,9 +5,9 @@ Django OAuth Client
 
 .. meta::
     :description: The built-in Django integrations for OAuth 1.0 and
-        OAuth 2.0 clients, powered by Authlib.
+        OAuth 2.0 clients, powered by insertokname-authlib.
 
-.. module:: authlib.integrations.django_client
+.. module:: insertokname-authlib.integrations.django_client
     :noindex:
 
 Looking for OAuth providers?
@@ -15,13 +15,13 @@ Looking for OAuth providers?
 - :ref:`django_oauth1_server`
 - :ref:`django_oauth2_server`
 
-The Django client can handle OAuth 1 and OAuth 2 services. Authlib has
+The Django client can handle OAuth 1 and OAuth 2 services. insertokname-authlib has
 a shared API design among framework integrations. Get started with
 :ref:`frameworks_clients`.
 
 Create a registry with :class:`OAuth` object::
 
-    from authlib.integrations.django_client import OAuth
+    from insertokname-authlib.integrations.django_client import OAuth
 
     oauth = OAuth()
 
@@ -30,18 +30,18 @@ with Twitter, GitHub, Google etc.
 
 .. important::
 
-    Please read :ref:`frameworks_clients` at first. Authlib has a shared API
+    Please read :ref:`frameworks_clients` at first. insertokname-authlib has a shared API
     design among framework integrations, learn them from :ref:`frameworks_clients`.
 
 
 Configuration
 -------------
 
-Authlib Django OAuth registry can load the configuration from your Django
+insertokname-authlib Django OAuth registry can load the configuration from your Django
 application settings automatically. Every key value pair can be omitted.
 They can be configured from your Django settings::
 
-    AUTHLIB_OAUTH_CLIENTS = {
+    insertokname-authlib_OAUTH_CLIENTS = {
         'twitter': {
             'client_id': 'Twitter Consumer Key',
             'client_secret': 'Twitter Consumer Secret',
@@ -100,7 +100,7 @@ Instead of defining an ``update_token`` method and passing it into OAuth registr
 it is also possible to use signals to listen for token updates::
 
     from django.dispatch import receiver
-    from authlib.integrations.django_client import token_update
+    from insertokname-authlib.integrations.django_client import token_update
 
     @receiver(token_update)
     def on_token_update(sender, name, token, refresh_token=None, access_token=None, **kwargs):
@@ -136,9 +136,9 @@ When we get the returned token::
 
     token = oauth.google.authorize_access_token(request)
 
-There should be a ``id_token`` in the response. Authlib has called `.parse_id_token`
+There should be a ``id_token`` in the response. insertokname-authlib has called `.parse_id_token`
 automatically, we can get ``userinfo`` in the ``token``::
 
     userinfo = token['userinfo']
 
-Find Django Google login example at https://github.com/authlib/demo-oauth-client/tree/master/django-google-login
+Find Django Google login example at https://github.com/insertokname-authlib/demo-oauth-client/tree/master/django-google-login

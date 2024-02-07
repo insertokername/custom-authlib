@@ -8,13 +8,13 @@ from django.db.models import (
 )
 from django.db.models import ForeignKey, CASCADE
 from django.contrib.auth.models import User
-from authlib.common.security import generate_token
-from authlib.oauth2.rfc6749 import (
+from insertokname-authlib.common.security import generate_token
+from insertokname-authlib.oauth2.rfc6749 import (
     ClientMixin,
     TokenMixin,
     AuthorizationCodeMixin,
 )
-from authlib.oauth2.rfc6749.util import scope_to_list, list_to_scope
+from insertokname-authlib.oauth2.rfc6749.util import scope_to_list, list_to_scope
 
 
 def now_timestamp():

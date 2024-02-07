@@ -1,11 +1,11 @@
 import time
 from flask_sqlalchemy import SQLAlchemy
-from authlib.integrations.sqla_oauth2 import (
+from insertokname-authlib.integrations.sqla_oauth2 import (
     OAuth2ClientMixin,
     OAuth2TokenMixin,
     OAuth2AuthorizationCodeMixin,
 )
-from authlib.oidc.core import UserInfo
+from insertokname-authlib.oidc.core import UserInfo
 db = SQLAlchemy()
 
 

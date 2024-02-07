@@ -5,21 +5,21 @@ OAuth 2 Session
 
 .. meta::
     :description: An OAuth 2.0 Client implementation for Python requests,
-        and httpx, powered by Authlib.
+        and httpx, powered by insertokname-authlib.
 
-.. module:: authlib.integrations
+.. module:: insertokname-authlib.integrations
     :noindex:
 
 .. versionchanged:: v0.13
 
-    All client related code have been moved into ``authlib.integrations``. For
-    earlier versions of Authlib, check out their own versions documentation.
+    All client related code have been moved into ``insertokname-authlib.integrations``. For
+    earlier versions of insertokname-authlib, check out their own versions documentation.
 
 This documentation covers the common design of a Python OAuth 2.0 client.
-Authlib provides three implementations of OAuth 2.0 client:
+insertokname-authlib provides three implementations of OAuth 2.0 client:
 
 1. :class:`requests_client.OAuth2Session` implementation of :ref:`requests_client`,
-   which is a replacement for **requests-oauthlib**.
+   which is a replacement for **requests-oinsertokname-authlib**.
 2. :class:`httpx_client.AsyncOAuth2Client` implementation of :ref:`httpx_client`,
    which is **async** OAuth 2.0 client powered by **HTTPX**.
 
@@ -44,11 +44,11 @@ code grant type. Initialize the session for reuse::
     >>> scope = 'user:email'  # we want to fetch user's email
     >>>
     >>> # using requests implementation
-    >>> from authlib.integrations.requests_client import OAuth2Session
+    >>> from insertokname-authlib.integrations.requests_client import OAuth2Session
     >>> client = OAuth2Session(client_id, client_secret, scope=scope)
     >>>
     >>> # using httpx implementation
-    >>> from authlib.integrations.httpx_client import AsyncOAuth2Client
+    >>> from insertokname-authlib.integrations.httpx_client import AsyncOAuth2Client
     >>> client = AsyncOAuth2Client(client_id, client_secret, scope=scope)
 
 You can assign a ``redirect_uri`` in case you want to specify the callback
@@ -101,21 +101,21 @@ another website. You need to create another session yourself::
     >>> state = restore_previous_state()
     >>>
     >>> # using requests
-    >>> from authlib.integrations.requests_client import OAuth2Session
+    >>> from insertokname-authlib.integrations.requests_client import OAuth2Session
     >>> client = OAuth2Session(client_id, client_secret, state=state)
     >>>
     >>> # using httpx
-    >>> from authlib.integrations.httpx_client import AsyncOAuth2Client
+    >>> from insertokname-authlib.integrations.httpx_client import AsyncOAuth2Client
     >>> client = AsyncOAuth2Client(client_id, client_secret, state=state)
     >>>
     >>> await client.fetch_token(token_endpoint, authorization_response=authorization_response)
 
-Authlib has a built-in Flask/Django integration. Learn from them.
+insertokname-authlib has a built-in Flask/Django integration. Learn from them.
 
 Add PKCE for Authorization Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Authlib client can handle PKCE automatically, just pass ``code_verifier`` to ``create_authorization_url``
+insertokname-authlib client can handle PKCE automatically, just pass ``code_verifier`` to ``create_authorization_url``
 and ``fetch_token``::
 
     >>> client = OAuth2Session(..., code_challenge_method='S256')
@@ -175,7 +175,7 @@ Client Authentication
 ---------------------
 
 When fetching access token, the authorization server will require a client
-authentication, Authlib provides **three default methods** defined by RFC7591:
+authentication, insertokname-authlib provides **three default methods** defined by RFC7591:
 
 - client_secret_basic
 - client_secret_post
@@ -194,7 +194,7 @@ construct an ``auth`` for your own need, and pass it to ``fetch_token``::
 
 It is also possible to extend the client authentication method with
 ``.register_client_auth_method``. Besides the default three authentication
-methods, there are more provided by Authlib. e.g.
+methods, there are more provided by insertokname-authlib. e.g.
 
 - client_secret_jwt
 - private_key_jwt
@@ -212,7 +212,7 @@ POST request::
 Let's call this weird authentication method ``client_secret_uri``, and this
 is how we can get our OAuth 2.0 client authenticated::
 
-    from authlib.common.urls import add_params_to_uri
+    from insertokname-authlib.common.urls import add_params_to_uri
 
     def auth_client_secret_uri(client, method, uri, headers, body):
         uri = add_params_to_uri(uri, [
@@ -267,14 +267,14 @@ Refresh & Auto Update Token
 
 It is possible that your previously saved token is expired when accessing
 protected resources. In this case, we can refresh the token manually, or even
-better, Authlib will refresh the token automatically and update the token
+better, insertokname-authlib will refresh the token automatically and update the token
 for us.
 
 Automatically refreshing tokens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your :class:`~requests_client.OAuth2Session` class was created with the
-`token_endpoint` parameter, Authlib will automatically refresh the token when
+`token_endpoint` parameter, insertokname-authlib will automatically refresh the token when
 it has expired::
 
     >>> openid_configuration = requests.get("https://example.org/.well-known/openid-configuration").json()
@@ -289,7 +289,7 @@ we are going to exchange a new "access_token" with "refresh_token"::
     >>> token = restore_previous_token_from_database()
     >>> new_token = client.refresh_token(token_endpoint, refresh_token=token.refresh_token)
 
-Authlib can also refresh a new token automatically when requesting resources.
+insertokname-authlib can also refresh a new token automatically when requesting resources.
 This is done by passing a ``update_token`` function when constructing the client
 instance::
 
@@ -355,7 +355,7 @@ For instance, Stackoverflow MUST add a `site` parameter in query
 string to protect users' resources. And stackoverflow's response is
 not in JSON. Let's fix it::
 
-    from authlib.common.urls import add_params_to_uri, url_decode
+    from insertokname-authlib.common.urls import add_params_to_uri, url_decode
 
     def _non_compliant_param_name(url, headers, data):
         params = {'site': 'stackoverflow'}
@@ -397,7 +397,7 @@ The remote server may require other parameters for OpenID Connect requests, for
 instance, it may require a ``nonce`` parameter, in this case, you need to
 generate it yourself, and pass it to ``create_authorization_url``::
 
-    >>> from authlib.common.security import generate_token
+    >>> from insertokname-authlib.common.security import generate_token
     >>> # remember to save this nonce for verification
     >>> nonce = generate_token()
     >>> client.create_authorization_url(url, redirect_uri='xxx', nonce=nonce, ...)
@@ -409,16 +409,16 @@ a ``id_token``::
     >>> print(resp['id_token'])
 
 This ``id_token`` is a JWT text, it can not be used unless it is parsed.
-Authlib has provided tools for parsing and validating OpenID Connect id_token::
+insertokname-authlib has provided tools for parsing and validating OpenID Connect id_token::
 
-    >>> from authlib.oidc.core import CodeIDToken
-    >>> from authlib.jose import jwt
+    >>> from insertokname-authlib.oidc.core import CodeIDToken
+    >>> from insertokname-authlib.jose import jwt
     >>> # GET keys from https://www.googleapis.com/oauth2/v3/certs
     >>> claims = jwt.decode(resp['id_token'], keys, claims_cls=CodeIDToken)
     >>> claims.validate()
 
-Get deep inside with :class:`~authlib.jose.JsonWebToken` and
-:class:`~authlib.oidc.core.CodeIDToken`. Learn how to validate JWT claims
+Get deep inside with :class:`~insertokname-authlib.jose.JsonWebToken` and
+:class:`~insertokname-authlib.oidc.core.CodeIDToken`. Learn how to validate JWT claims
 at :ref:`jwt_guide`.
 
 
@@ -436,7 +436,7 @@ Take `Google Service Account`_ as an example, with the information in your
 service account JSON configure file::
 
     import json
-    from authlib.integrations.requests_client import AssertionSession
+    from insertokname-authlib.integrations.requests_client import AssertionSession
 
     with open('MyProject-1234.json') as f:
         conf = json.load(f)
@@ -465,8 +465,8 @@ service account JSON configure file::
 There is a ready to use ``GoogleServiceAccount`` in loginpass_. You can
 also read these posts:
 
-- `Access Google Analytics API <https://blog.authlib.org/2018/access-google-analytics-api>`_.
-- `Using Authlib with gspread <https://blog.authlib.org/2018/authlib-for-gspread>`_.
+- `Access Google Analytics API <https://blog.insertokname-authlib.org/2018/access-google-analytics-api>`_.
+- `Using insertokname-authlib with gspread <https://blog.insertokname-authlib.org/2018/insertokname-authlib-for-gspread>`_.
 
-.. _loginpass: https://github.com/authlib/loginpass
+.. _loginpass: https://github.com/insertokname-authlib/loginpass
 .. _`Google Service Account`: https://developers.google.com/identity/protocols/OAuth2ServiceAccount

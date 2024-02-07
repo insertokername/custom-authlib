@@ -17,19 +17,19 @@ It includes:
     We are splitting the ``jose`` module into a separated package. You may be
     interested in joserfc_.
 
-.. _joserfc: https://jose.authlib.org/
+.. _joserfc: https://jose.insertokname-authlib.org/
 
 Usage
 -----
 
-A simple example on how to use JWT with Authlib::
+A simple example on how to use JWT with insertokname-authlib::
 
-    from authlib.jose import jwt
+    from insertokname-authlib.jose import jwt
 
     with open('private.pem', 'rb') as f:
         key = f.read()
 
-    payload = {'iss': 'Authlib', 'sub': '123', ...}
+    payload = {'iss': 'insertokname-authlib', 'sub': '123', ...}
     header = {'alg': 'RS256'}
     s = jwt.encode(header, payload, key)
 

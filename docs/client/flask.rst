@@ -5,10 +5,10 @@ Flask OAuth Client
 
 .. meta::
     :description: The built-in Flask integrations for OAuth 1.0, OAuth 2.0
-        and OpenID Connect clients, powered by Authlib.
+        and OpenID Connect clients, powered by insertokname-authlib.
 
 
-.. module:: authlib.integrations.flask_client
+.. module:: insertokname-authlib.integrations.flask_client
     :noindex:
 
 This documentation covers OAuth 1.0, OAuth 2.0 and OpenID Connect Client
@@ -18,12 +18,12 @@ support for Flask. Looking for OAuth providers?
 - :ref:`flask_oauth2_server`
 
 Flask OAuth client can handle OAuth 1 and OAuth 2 services. It shares a
-similar API with Flask-OAuthlib, you can transfer your code from
-Flask-OAuthlib to Authlib with ease.
+similar API with Flask-Oinsertokname-authlib, you can transfer your code from
+Flask-Oinsertokname-authlib to insertokname-authlib with ease.
 
 Create a registry with :class:`OAuth` object::
 
-    from authlib.integrations.flask_client import OAuth
+    from insertokname-authlib.integrations.flask_client import OAuth
 
     oauth = OAuth(app)
 
@@ -37,13 +37,13 @@ with Twitter, GitHub, Google etc.
 
 .. important::
 
-    Please read :ref:`frameworks_clients` at first. Authlib has a shared API
+    Please read :ref:`frameworks_clients` at first. insertokname-authlib has a shared API
     design among framework integrations, learn them from :ref:`frameworks_clients`.
 
 Configuration
 -------------
 
-Authlib Flask OAuth registry can load the configuration from Flask ``app.config``
+insertokname-authlib Flask OAuth registry can load the configuration from Flask ``app.config``
 automatically. Every key value pair in ``.register`` can be omitted. They can be
 configured in your Flask App configuration. Config keys are formatted as
 ``{name}_{key}`` in uppercase, e.g.
@@ -128,7 +128,7 @@ Accessing OAuth Resources
 -------------------------
 
 There is no ``request`` in accessing OAuth resources either. Just like above,
-we don't need to pass ``request`` parameter, everything is handled by Authlib
+we don't need to pass ``request`` parameter, everything is handled by insertokname-authlib
 automatically::
 
     from flask import render_template
@@ -178,7 +178,7 @@ Before using signal, make sure you have installed **blinker** library::
 
 Connect the ``token_update`` signal::
 
-    from authlib.integrations.flask_client import token_update
+    from insertokname-authlib.integrations.flask_client import token_update
 
     @token_update.connect_via(app)
     def on_token_update(sender, name, token, refresh_token=None, access_token=None):
@@ -214,7 +214,7 @@ When we get the returned token::
 
     token = oauth.google.authorize_access_token()
 
-There should be a ``id_token`` in the response. Authlib has called `.parse_id_token`
+There should be a ``id_token`` in the response. insertokname-authlib has called `.parse_id_token`
 automatically, we can get ``userinfo`` in the ``token``::
 
     userinfo = token['userinfo']
@@ -227,5 +227,5 @@ Here are some example projects for you to learn Flask OAuth client integrations:
 1. OAuth 1.0: `Flask Twitter Login`_.
 2. OAuth 2.0 & OpenID Connect: `Flask Google Login`_.
 
-.. _`Flask Twitter Login`: https://github.com/authlib/demo-oauth-client/tree/master/flask-twitter-tool
-.. _`Flask Google Login`: https://github.com/authlib/demo-oauth-client/tree/master/flask-google-login
+.. _`Flask Twitter Login`: https://github.com/insertokname-authlib/demo-oauth-client/tree/master/flask-twitter-tool
+.. _`Flask Google Login`: https://github.com/insertokname-authlib/demo-oauth-client/tree/master/flask-google-login

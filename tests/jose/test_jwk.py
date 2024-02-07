@@ -1,7 +1,7 @@
 import unittest
-from authlib.jose import JsonWebKey, KeySet
-from authlib.jose import OctKey, RSAKey, ECKey, OKPKey
-from authlib.common.encoding import base64_to_int, json_dumps
+from insertokname-authlib.jose import JsonWebKey, KeySet
+from insertokname-authlib.jose import OctKey, RSAKey, ECKey, OKPKey
+from insertokname-authlib.common.encoding import base64_to_int, json_dumps
 from tests.util import read_file_path
 
 

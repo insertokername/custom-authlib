@@ -5,16 +5,16 @@ OAuth 1 Session
 
 .. meta::
     :description: An OAuth 1.0 protocol Client implementation for Python
-        requests and httpx, powered by Authlib.
+        requests and httpx, powered by insertokname-authlib.
 
-.. module:: authlib.integrations
+.. module:: insertokname-authlib.integrations
     :noindex:
 
 This documentation covers the common design of a Python OAuth 1.0 client.
-Authlib provides three implementations of OAuth 1.0 client:
+insertokname-authlib provides three implementations of OAuth 1.0 client:
 
 1. :class:`requests_client.OAuth1Session` implementation of :ref:`requests_client`,
-   which is a replacement for **requests-oauthlib**.
+   which is a replacement for **requests-oinsertokname-authlib**.
 2. :class:`httpx_client.AsyncOAuth1Client` implementation of :ref:`httpx_client`,
    which is an **async** OAuth 1.0 client.
 
@@ -41,10 +41,10 @@ But first, we need to initialize an OAuth 1.0 client::
     >>> client_id = 'Your Twitter client key'
     >>> client_secret = 'Your Twitter client secret'
     >>> # using requests client
-    >>> from authlib.integrations.requests_client import OAuth1Session
+    >>> from insertokname-authlib.integrations.requests_client import OAuth1Session
     >>> client = OAuth1Session(client_id, client_secret)
     >>> # using httpx client
-    >>> from authlib.integrations.httpx_client import AsyncOAuth1Client
+    >>> from insertokname-authlib.integrations.httpx_client import AsyncOAuth1Client
     >>> client = AsyncOAuth1Client(client_id, client_secret)
 
 .. _fetch_request_token:
@@ -127,8 +127,8 @@ session::
     >>> request_token = restore_request_token()
     >>> oauth_token = request_token['oauth_token']
     >>> oauth_token_secret = request_token['oauth_token_secret']
-    >>> from authlib.integrations.requests_client import OAuth1Session
-    >>> # if using httpx: from authlib.integrations.httpx_client import AsyncOAuth1Client
+    >>> from insertokname-authlib.integrations.requests_client import OAuth1Session
+    >>> # if using httpx: from insertokname-authlib.integrations.httpx_client import AsyncOAuth1Client
     >>> client = OAuth1Session(
     ...     client_id, client_secret,
     ...     token=oauth_token,
@@ -156,7 +156,7 @@ The above is not the real flow, just like what we did in
     >>> access_token = restore_access_token_from_database()
     >>> oauth_token = access_token['oauth_token']
     >>> oauth_token_secret = access_token['oauth_token_secret']
-    >>> # if using httpx: from authlib.integrations.httpx_client import AsyncOAuth1Client
+    >>> # if using httpx: from insertokname-authlib.integrations.httpx_client import AsyncOAuth1Client
     >>> client = OAuth1Session(
     ...     client_id, client_secret,
     ...     token=oauth_token,
@@ -174,10 +174,10 @@ It is also possible to access protected resources with ``OAuth1Auth`` object.
 Create an instance of OAuth1Auth with an access token::
 
     # if using requests
-    from authlib.integrations.requests_client import OAuth1Auth
+    from insertokname-authlib.integrations.requests_client import OAuth1Auth
 
     # if using httpx
-    from authlib.integrations.httpx_client import OAuth1Auth
+    from insertokname-authlib.integrations.httpx_client import OAuth1Auth
 
     auth = OAuth1Auth(
         client_id='..',

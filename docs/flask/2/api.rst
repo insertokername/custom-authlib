@@ -4,7 +4,7 @@ API References of Flask OAuth 2.0 Server
 This part of the documentation covers the interface of Flask OAuth 2.0
 Server.
 
-.. module:: authlib.integrations.flask_oauth2
+.. module:: insertokname-authlib.integrations.flask_oauth2
 
 .. autoclass:: AuthorizationServer
     :members:
@@ -25,7 +25,7 @@ Server.
     Routes protected by :class:`ResourceProtector` can access current token
     with this variable::
 
-        from authlib.integrations.flask_oauth2 import current_token
+        from insertokname-authlib.integrations.flask_oauth2 import current_token
 
         @require_oauth()
         @app.route('/user_id')
@@ -51,7 +51,7 @@ SQLAlchemy Helper Functions
 
 .. warning:: We will drop ``sqla_oauth2`` module in version 1.0.
 
-.. module:: authlib.integrations.sqla_oauth2
+.. module:: insertokname-authlib.integrations.sqla_oauth2
 
 .. autofunction:: create_query_client_func
 

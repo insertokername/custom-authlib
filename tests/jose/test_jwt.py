@@ -1,8 +1,8 @@
 import unittest
 import datetime
-from authlib.jose import errors
-from authlib.jose import JsonWebToken, JWTClaims, jwt
-from authlib.jose.errors import UnsupportedAlgorithmError
+from insertokname-authlib.jose import errors
+from insertokname-authlib.jose import JsonWebToken, JWTClaims, jwt
+from insertokname-authlib.jose.errors import UnsupportedAlgorithmError
 from tests.util import read_file_path
 
 

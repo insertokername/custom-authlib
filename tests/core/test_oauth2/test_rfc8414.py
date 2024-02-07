@@ -1,6 +1,6 @@
 import unittest
-from authlib.oauth2.rfc8414 import get_well_known_url
-from authlib.oauth2.rfc8414 import AuthorizationServerMetadata
+from insertokname-authlib.oauth2.rfc8414 import get_well_known_url
+from insertokname-authlib.oauth2.rfc8414 import AuthorizationServerMetadata
 
 
 WELL_KNOWN_URL = '/.well-known/oauth-authorization-server'
@@ -9,41 +9,41 @@ WELL_KNOWN_URL = '/.well-known/oauth-authorization-server'
 class WellKnownTest(unittest.TestCase):
     def test_no_suffix_issuer(self):
         self.assertEqual(
-            get_well_known_url('https://authlib.org'),
+            get_well_known_url('https://insertokname-authlib.org'),
             WELL_KNOWN_URL
         )
         self.assertEqual(
-            get_well_known_url('https://authlib.org/'),
+            get_well_known_url('https://insertokname-authlib.org/'),
             WELL_KNOWN_URL
         )
 
     def test_with_suffix_issuer(self):
         self.assertEqual(
-            get_well_known_url('https://authlib.org/issuer1'),
+            get_well_known_url('https://insertokname-authlib.org/issuer1'),
             WELL_KNOWN_URL + '/issuer1'
         )
         self.assertEqual(
-            get_well_known_url('https://authlib.org/a/b/c'),
+            get_well_known_url('https://insertokname-authlib.org/a/b/c'),
             WELL_KNOWN_URL + '/a/b/c'
         )
 
     def test_with_external(self):
         self.assertEqual(
-            get_well_known_url('https://authlib.org', external=True),
-            'https://authlib.org' + WELL_KNOWN_URL
+            get_well_known_url('https://insertokname-authlib.org', external=True),
+            'https://insertokname-authlib.org' + WELL_KNOWN_URL
         )
 
     def test_with_changed_suffix(self):
         url = get_well_known_url(
-            'https://authlib.org',
+            'https://insertokname-authlib.org',
             suffix='openid-configuration')
         self.assertEqual(url, '/.well-known/openid-configuration')
         url = get_well_known_url(
-            'https://authlib.org',
+            'https://insertokname-authlib.org',
             external=True,
             suffix='openid-configuration'
         )
-        self.assertEqual(url, 'https://authlib.org/.well-known/openid-configuration')
+        self.assertEqual(url, 'https://insertokname-authlib.org/.well-known/openid-configuration')
 
 
 class AuthorizationServerMetadataTest(unittest.TestCase):
@@ -56,7 +56,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         #: https
         metadata = AuthorizationServerMetadata({
-            'issuer': 'http://authlib.org/'
+            'issuer': 'http://insertokname-authlib.org/'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_issuer()
@@ -64,7 +64,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         #: query
         metadata = AuthorizationServerMetadata({
-            'issuer': 'https://authlib.org/?a=b'
+            'issuer': 'https://insertokname-authlib.org/?a=b'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_issuer()
@@ -72,21 +72,21 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         #: fragment
         metadata = AuthorizationServerMetadata({
-            'issuer': 'https://authlib.org/#a=b'
+            'issuer': 'https://insertokname-authlib.org/#a=b'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_issuer()
         self.assertIn('fragment', str(cm.exception))
 
         metadata = AuthorizationServerMetadata({
-            'issuer': 'https://authlib.org/'
+            'issuer': 'https://insertokname-authlib.org/'
         })
         metadata.validate_issuer()
 
     def test_validate_authorization_endpoint(self):
         # https
         metadata = AuthorizationServerMetadata({
-            'authorization_endpoint': 'http://authlib.org/'
+            'authorization_endpoint': 'http://insertokname-authlib.org/'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_authorization_endpoint()
@@ -94,7 +94,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         # valid https
         metadata = AuthorizationServerMetadata({
-            'authorization_endpoint': 'https://authlib.org/'
+            'authorization_endpoint': 'https://insertokname-authlib.org/'
         })
         metadata.validate_authorization_endpoint()
 
@@ -125,7 +125,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         # https
         metadata = AuthorizationServerMetadata({
-            'token_endpoint': 'http://authlib.org/'
+            'token_endpoint': 'http://insertokname-authlib.org/'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_token_endpoint()
@@ -133,7 +133,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         # valid
         metadata = AuthorizationServerMetadata({
-            'token_endpoint': 'https://authlib.org/'
+            'token_endpoint': 'https://insertokname-authlib.org/'
         })
         metadata.validate_token_endpoint()
 
@@ -143,14 +143,14 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
         metadata.validate_jwks_uri()
 
         metadata = AuthorizationServerMetadata({
-            'jwks_uri': 'http://authlib.org/jwks.json'
+            'jwks_uri': 'http://insertokname-authlib.org/jwks.json'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_jwks_uri()
         self.assertIn('https', str(cm.exception))
 
         metadata = AuthorizationServerMetadata({
-            'jwks_uri': 'https://authlib.org/jwks.json'
+            'jwks_uri': 'https://insertokname-authlib.org/jwks.json'
         })
         metadata.validate_jwks_uri()
 
@@ -159,14 +159,14 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
         metadata.validate_registration_endpoint()
 
         metadata = AuthorizationServerMetadata({
-            'registration_endpoint': 'http://authlib.org/'
+            'registration_endpoint': 'http://insertokname-authlib.org/'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_registration_endpoint()
         self.assertIn('https', str(cm.exception))
 
         metadata = AuthorizationServerMetadata({
-            'registration_endpoint': 'https://authlib.org/'
+            'registration_endpoint': 'https://insertokname-authlib.org/'
         })
         metadata.validate_registration_endpoint()
 
@@ -301,7 +301,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
         self.assertIn('MUST be a URL', str(cm.exception))
 
         metadata = AuthorizationServerMetadata({
-            'service_documentation': 'https://authlib.org/'
+            'service_documentation': 'https://insertokname-authlib.org/'
         })
         metadata.validate_service_documentation()
 
@@ -335,7 +335,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
         self.assertIn('MUST be a URL', str(cm.exception))
 
         metadata = AuthorizationServerMetadata({
-            'op_policy_uri': 'https://authlib.org/'
+            'op_policy_uri': 'https://insertokname-authlib.org/'
         })
         metadata.validate_op_policy_uri()
 
@@ -351,7 +351,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
         self.assertIn('MUST be a URL', str(cm.exception))
 
         metadata = AuthorizationServerMetadata({
-            'op_tos_uri': 'https://authlib.org/'
+            'op_tos_uri': 'https://insertokname-authlib.org/'
         })
         metadata.validate_op_tos_uri()
 
@@ -361,7 +361,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         # https
         metadata = AuthorizationServerMetadata({
-            'revocation_endpoint': 'http://authlib.org/'
+            'revocation_endpoint': 'http://insertokname-authlib.org/'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_revocation_endpoint()
@@ -369,7 +369,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         # valid
         metadata = AuthorizationServerMetadata({
-            'revocation_endpoint': 'https://authlib.org/'
+            'revocation_endpoint': 'https://insertokname-authlib.org/'
         })
         metadata.validate_revocation_endpoint()
 
@@ -423,7 +423,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         # https
         metadata = AuthorizationServerMetadata({
-            'introspection_endpoint': 'http://authlib.org/'
+            'introspection_endpoint': 'http://insertokname-authlib.org/'
         })
         with self.assertRaises(ValueError) as cm:
             metadata.validate_introspection_endpoint()
@@ -431,7 +431,7 @@ class AuthorizationServerMetadataTest(unittest.TestCase):
 
         # valid
         metadata = AuthorizationServerMetadata({
-            'introspection_endpoint': 'https://authlib.org/'
+            'introspection_endpoint': 'https://insertokname-authlib.org/'
         })
         metadata.validate_introspection_endpoint()
 

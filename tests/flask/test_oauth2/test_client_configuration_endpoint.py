@@ -1,8 +1,8 @@
 from flask import json
-from authlib.common.security import generate_token
-from authlib.jose import jwt
-from authlib.oauth2.rfc7591.claims import ClientMetadataClaims
-from authlib.oauth2.rfc7592 import (
+from insertokname-authlib.common.security import generate_token
+from insertokname-authlib.jose import jwt
+from insertokname-authlib.oauth2.rfc7591.claims import ClientMetadataClaims
+from insertokname-authlib.oauth2.rfc7592 import (
     ClientConfigurationEndpoint as _ClientConfigurationEndpoint,
 )
 from tests.util import read_file_path
@@ -80,7 +80,7 @@ class ClientConfigurationTestMixin(TestCase):
         )
         client.set_client_metadata(
             {
-                'client_name': 'Authlib',
+                'client_name': 'insertokname-authlib',
                 'scope': 'openid profile',
             }
         )
@@ -104,13 +104,13 @@ class ClientConfigurationTestMixin(TestCase):
 class ClientConfigurationReadTest(ClientConfigurationTestMixin):
     def test_read_client(self):
         user, client, token = self.prepare_data()
-        self.assertEqual(client.client_name, 'Authlib')
+        self.assertEqual(client.client_name, 'insertokname-authlib')
         headers = {'Authorization': f'bearer {token.access_token}'}
         rv = self.client.get('/configure_client/client_id', headers=headers)
         resp = json.loads(rv.data)
         self.assertEqual(rv.status_code, 200)
         self.assertEqual(resp['client_id'], client.client_id)
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
         self.assertEqual(
             resp['registration_client_uri'],
             'http://localhost/configure_client/client_id',
@@ -183,18 +183,18 @@ class ClientConfigurationUpdateTest(ClientConfigurationTestMixin):
         # value in the request just as any other value.
 
         user, client, token = self.prepare_data()
-        self.assertEqual(client.client_name, 'Authlib')
+        self.assertEqual(client.client_name, 'insertokname-authlib')
         headers = {'Authorization': f'bearer {token.access_token}'}
         body = {
             'client_id': client.client_id,
-            'client_name': 'NewAuthlib',
+            'client_name': 'Newinsertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertEqual(rv.status_code, 200)
         self.assertEqual(resp['client_id'], client.client_id)
-        self.assertEqual(resp['client_name'], 'NewAuthlib')
-        self.assertEqual(client.client_name, 'NewAuthlib')
+        self.assertEqual(resp['client_name'], 'Newinsertokname-authlib')
+        self.assertEqual(client.client_name, 'Newinsertokname-authlib')
         self.assertEqual(client.scope, 'openid profile')
 
     def test_access_denied(self):
@@ -322,7 +322,7 @@ class ClientConfigurationUpdateTest(ClientConfigurationTestMixin):
 
         body = {
             'client_id': client.client_id,
-            'client_name': 'NewAuthlib',
+            'client_name': 'Newinsertokname-authlib',
             'token_endpoint_auth_method': 'invalid_auth_method',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
@@ -338,29 +338,29 @@ class ClientConfigurationUpdateTest(ClientConfigurationTestMixin):
         body = {
             'client_id': 'client_id',
             'scope': 'profile email',
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertEqual(resp['client_id'], 'client_id')
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
         self.assertEqual(resp['scope'], 'profile email')
 
         headers = {'Authorization': f'bearer {token.access_token}'}
         body = {
             'client_id': 'client_id',
             'scope': '',
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertEqual(resp['client_id'], 'client_id')
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
 
         body = {
             'client_id': 'client_id',
             'scope': 'profile email address',
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
@@ -374,18 +374,18 @@ class ClientConfigurationUpdateTest(ClientConfigurationTestMixin):
         body = {
             'client_id': 'client_id',
             'response_types': ['code'],
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertEqual(resp['client_id'], 'client_id')
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
         self.assertEqual(resp['response_types'], ['code'])
 
         body = {
             'client_id': 'client_id',
             'response_types': ['code', 'token'],
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
@@ -399,18 +399,18 @@ class ClientConfigurationUpdateTest(ClientConfigurationTestMixin):
         body = {
             'client_id': 'client_id',
             'grant_types': ['password'],
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertEqual(resp['client_id'], 'client_id')
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
         self.assertEqual(resp['grant_types'], ['password'])
 
         body = {
             'client_id': 'client_id',
             'grant_types': ['client_credentials'],
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
@@ -424,18 +424,18 @@ class ClientConfigurationUpdateTest(ClientConfigurationTestMixin):
         body = {
             'client_id': 'client_id',
             'token_endpoint_auth_method': 'client_secret_basic',
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
         self.assertEqual(resp['client_id'], 'client_id')
-        self.assertEqual(resp['client_name'], 'Authlib')
+        self.assertEqual(resp['client_name'], 'insertokname-authlib')
         self.assertEqual(resp['token_endpoint_auth_method'], 'client_secret_basic')
 
         body = {
             'client_id': 'client_id',
             'token_endpoint_auth_method': 'none',
-            'client_name': 'Authlib',
+            'client_name': 'insertokname-authlib',
         }
         rv = self.client.put('/configure_client/client_id', json=body, headers=headers)
         resp = json.loads(rv.data)
@@ -445,7 +445,7 @@ class ClientConfigurationUpdateTest(ClientConfigurationTestMixin):
 class ClientConfigurationDeleteTest(ClientConfigurationTestMixin):
     def test_delete_client(self):
         user, client, token = self.prepare_data()
-        self.assertEqual(client.client_name, 'Authlib')
+        self.assertEqual(client.client_name, 'insertokname-authlib')
         headers = {'Authorization': f'bearer {token.access_token}'}
         rv = self.client.delete('/configure_client/client_id', headers=headers)
         self.assertEqual(rv.status_code, 204)

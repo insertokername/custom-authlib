@@ -5,9 +5,9 @@ Starlette OAuth Client
 
 .. meta::
     :description: The built-in Starlette integrations for OAuth 1.0, OAuth 2.0
-        and OpenID Connect clients, powered by Authlib.
+        and OpenID Connect clients, powered by insertokname-authlib.
 
-.. module:: authlib.integrations.starlette_client
+.. module:: insertokname-authlib.integrations.starlette_client
     :noindex:
 
 Starlette_ is a lightweight ASGI framework/toolkit, which is ideal for
@@ -25,7 +25,7 @@ The difference between Starlette and Flask/Django integrations is Starlette
 is **async**. We will use ``await`` for the functions we need to call. But
 first, let's create an :class:`OAuth` instance::
 
-    from authlib.integrations.starlette_client import OAuth
+    from insertokname-authlib.integrations.starlette_client import OAuth
 
     oauth = OAuth()
 
@@ -35,7 +35,7 @@ with Twitter, GitHub, Google etc.
 Configuration
 -------------
 
-Starlette can load configuration from environment; Authlib implementation
+Starlette can load configuration from environment; insertokname-authlib implementation
 for Starlette client can use this configuration. Here is an example of how
 to do it::
 
@@ -44,7 +44,7 @@ to do it::
     config = Config('.env')
     oauth = OAuth(config)
 
-Authlib will load ``client_id`` and ``client_secret`` from the configuration,
+insertokname-authlib will load ``client_id`` and ``client_secret`` from the configuration,
 take google as an example::
 
     oauth.register(name='google', ...)
@@ -65,11 +65,11 @@ Register Remote Apps
     )
 
 However, unlike Flask/Django, Starlette OAuth registry is using HTTPX
-:class:`~authlib.integrations.httpx_client.AsyncOAuth1Client` and
-:class:`~authlib.integrations.httpx_client.AsyncOAuth2Client` as the OAuth
+:class:`~insertokname-authlib.integrations.httpx_client.AsyncOAuth1Client` and
+:class:`~insertokname-authlib.integrations.httpx_client.AsyncOAuth2Client` as the OAuth
 backends. While Flask and Django are using the Requests version of
-:class:`~authlib.integrations.requests_client.OAuth1Session` and
-:class:`~authlib.integrations.requests_client.OAuth2Session`.
+:class:`~insertokname-authlib.integrations.requests_client.OAuth1Session` and
+:class:`~insertokname-authlib.integrations.requests_client.OAuth2Session`.
 
 
 Enable Session for OAuth 1.0
@@ -129,7 +129,7 @@ When we get the returned token::
 
     token = await oauth.google.authorize_access_token()
 
-There should be a ``id_token`` in the response. Authlib has called `.parse_id_token`
+There should be a ``id_token`` in the response. insertokname-authlib has called `.parse_id_token`
 automatically, we can get ``userinfo`` in the ``token``::
 
     userinfo = token['userinfo']
@@ -137,7 +137,7 @@ automatically, we can get ``userinfo`` in the ``token``::
 Examples
 --------
 
-We have Starlette demos at https://github.com/authlib/demo-oauth-client
+We have Starlette demos at https://github.com/insertokname-authlib/demo-oauth-client
 
-1. OAuth 1.0: `Starlette Twitter login <https://github.com/authlib/demo-oauth-client/tree/master/starlette-twitter-login>`_
-2. OAuth 2.0: `Starlette Google login <https://github.com/authlib/demo-oauth-client/tree/master/starlette-google-login>`_
+1. OAuth 1.0: `Starlette Twitter login <https://github.com/insertokname-authlib/demo-oauth-client/tree/master/starlette-twitter-login>`_
+2. OAuth 2.0: `Starlette Google login <https://github.com/insertokname-authlib/demo-oauth-client/tree/master/starlette-google-login>`_

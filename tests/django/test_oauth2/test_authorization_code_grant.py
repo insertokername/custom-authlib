@@ -1,6 +1,6 @@
 import json
-from authlib.oauth2.rfc6749 import grants, errors
-from authlib.common.urls import urlparse, url_decode
+from insertokname-authlib.oauth2.rfc6749 import grants, errors
+from insertokname-authlib.common.urls import urlparse, url_decode
 from django.test import override_settings
 from .models import User, Client, OAuth2Code
 from .models import CodeGrantMixin
@@ -158,7 +158,7 @@ class AuthorizationCodeTest(TestCase):
         self.assertNotIn('refresh_token', data)
 
     @override_settings(
-        AUTHLIB_OAUTH2_PROVIDER={'refresh_token_generator': True})
+        insertokname-authlib_OAUTH2_PROVIDER={'refresh_token_generator': True})
     def test_create_token_response_with_refresh_token(self):
         self.prepare_data(grant_type='authorization_code\nrefresh_token')
         data = self.get_token_response()

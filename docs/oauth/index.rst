@@ -1,7 +1,7 @@
 OAuth & OpenID Connect
 ======================
 
-This section contains introduction and implementation of Authlib core
+This section contains introduction and implementation of insertokname-authlib core
 OAuth 1.0, OAuth 2.0, and OpenID Connect.
 
 .. toctree::

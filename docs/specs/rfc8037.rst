@@ -13,7 +13,7 @@ Algorithms for JWS
 In RFC8037, algorithm "EdDSA" is defined for JWS. Use Edwards-curve Digital
 Signature Algorithm (EdDSA) for signing data using "JSON Web Signature (JWS)"::
 
-    from authlib.jose import JsonWebSignature
+    from insertokname-authlib.jose import JsonWebSignature
 
     # only allow "EdDSA" alg value
     jws = JsonWebSignature(algorithms=['EdDSA'])
@@ -29,7 +29,7 @@ Learn how to use other JWS functions at :ref:`jws_guide`.
 
 It can also be used in JSON Web Token (JWT)::
 
-    from authlib.jose import JsonWebToken
+    from insertokname-authlib.jose import JsonWebToken
 
     jwt = JsonWebToken(algorithms=['EdDSA'])
 
@@ -37,7 +37,7 @@ It can also be used in JSON Web Token (JWT)::
         key = f.read()
 
     header = {'alg': 'EdDSA'}
-    payload = {'iss': 'Authlib', 'sub': '123', ...}
+    payload = {'iss': 'insertokname-authlib', 'sub': '123', ...}
     s = jwt.encode(header, payload, key)
 
 
@@ -47,7 +47,7 @@ Algorithms for JWK
 In RFC8037, algorithms "Ed25519", "Ed448", "X25519", "X448" are defined for JWK.
 Loads and dumps Json Web Keys with::
 
-    from authlib.jose import JsonWebKey
+    from insertokname-authlib.jose import JsonWebKey
 
     with open('ed25519-pkcs8.pem', 'rb') as f:
         key = f.read()
@@ -63,8 +63,8 @@ Algorithms for JWE
 "X25519", "X448" keys are used in "epk" for ECDH-ES algorithms.
 Just use the ``X25519`` and ``X448`` key for ``ECDH-ES`` in JWE::
 
-    from authlib.jose import OKPKey
-    from authlib.jose import JsonWebEncryption
+    from insertokname-authlib.jose import OKPKey
+    from insertokname-authlib.jose import JsonWebEncryption
 
     jwe = JsonWebEncryption()
 
@@ -82,6 +82,6 @@ Just use the ``X25519`` and ``X448`` key for ``ECDH-ES`` in JWE::
 API Reference
 -------------
 
-.. autoclass:: authlib.jose.OKPKey
+.. autoclass:: insertokname-authlib.jose.OKPKey
    :member-order: bysource
    :members:

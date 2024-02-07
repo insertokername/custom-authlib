@@ -1,5 +1,5 @@
 import json
-from authlib.integrations.django_oauth2 import RevocationEndpoint
+from insertokname-authlib.integrations.django_oauth2 import RevocationEndpoint
 from .oauth2_server import TestCase
 from .models import User, OAuth2Token, Client
 

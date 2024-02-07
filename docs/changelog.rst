@@ -2,9 +2,9 @@ Changelog
 =========
 
 .. meta::
-    :description: The full list of changes between each Authlib release.
+    :description: The full list of changes between each insertokname-authlib release.
 
-Here you can see the full list of changes between each Authlib release.
+Here you can see the full list of changes between each insertokname-authlib release.
 
 Version 1.3.0
 -------------
@@ -68,7 +68,7 @@ This release contains breaking changes and security fixes.
 
 - Raise ``InvalidGrantError`` for invalid code, redirect_uri and no user errors in OAuth
   2.0 server.
-- The default ``authlib.jose.jwt`` would only work with JSON Web Signature algorithms, if
+- The default ``insertokname-authlib.jose.jwt`` would only work with JSON Web Signature algorithms, if
   you would like to use JWT with JWE algorithms, please pass the algorithms parameter::
 
       jwt = JsonWebToken(['A128KW', 'A128GCM', 'DEF'])
@@ -107,7 +107,7 @@ In Flask OAuth 2.0 provider, we have removed the deprecated
 ``OAUTH2_JWT_XXX`` configuration, instead, developers should define
 `.get_jwt_config` on OpenID extensions and grant types.
 
-**SQLAlchemy** integrations has been removed from Authlib. Developers
+**SQLAlchemy** integrations has been removed from insertokname-authlib. Developers
 should define the database by themselves.
 
 **JOSE Changes**
@@ -127,7 +127,7 @@ Added ``ES256K`` algorithm for JWS and JWT.
 Old Versions
 ------------
 
-Find old changelog at https://github.com/lepture/authlib/releases
+Find old changelog at https://github.com/lepture/insertokname-authlib/releases
 
 - Version 0.15.5: Released on Oct 18, 2021
 - Version 0.15.4: Released on Jul 17, 2021

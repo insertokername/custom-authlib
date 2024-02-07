@@ -4,7 +4,7 @@ Django OAuth 1.0 Server
 =======================
 
 .. meta::
-    :description: How to create an OAuth 1.0 server in Django with Authlib.
+    :description: How to create an OAuth 1.0 server in Django with insertokname-authlib.
         And understand how OAuth 1.0 works.
 
 This is just an alpha implementation of Django OAuth 1.0 provider. An OAuth 1
@@ -21,7 +21,7 @@ At the very beginning, we need to have some basic understanding of
     If you are developing on your localhost, remember to set the environment
     variable::
 
-        export AUTHLIB_INSECURE_TRANSPORT=true
+        export insertokname-authlib_INSECURE_TRANSPORT=true
 
 Looking for Django OAuth 1.0 client? Check out :ref:`django_client`.
 

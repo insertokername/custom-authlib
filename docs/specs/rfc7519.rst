@@ -16,11 +16,11 @@ it in :ref:`JWT Guide <jwt_guide>`.
 API Reference
 -------------
 
-.. autoclass:: authlib.jose.JsonWebToken
+.. autoclass:: insertokname-authlib.jose.JsonWebToken
     :member-order: bysource
     :members:
 
 
-.. autoclass:: authlib.jose.JWTClaims
+.. autoclass:: insertokname-authlib.jose.JWTClaims
     :member-order: bysource
     :members:

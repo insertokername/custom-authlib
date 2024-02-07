@@ -11,7 +11,7 @@ A resource server can be a different server other than the authorization
 server. Here is the way to protect your users' resources::
 
     from flask import jsonify
-    from authlib.integrations.flask_oauth1 import ResourceProtector, current_credential
+    from insertokname-authlib.integrations.flask_oauth1 import ResourceProtector, current_credential
 
     # we will define ``query_client``, ``query_token``, and ``exists_nonce`` later.
     require_oauth = ResourceProtector(
@@ -58,10 +58,10 @@ And ``query_token`` would be::
     def query_token(client_id, oauth_token):
         return TokenCredential.query.filter_by(client_id=client_id, oauth_token=oauth_token).first()
 
-For ``exists_nonce``, if you are using cache now (as in authorization server), Authlib
+For ``exists_nonce``, if you are using cache now (as in authorization server), insertokname-authlib
 has a built-in tool function::
 
-    from authlib.integrations.flask_oauth1 import create_exists_nonce_func
+    from insertokname-authlib.integrations.flask_oauth1 import create_exists_nonce_func
     exists_nonce = create_exists_nonce_func(cache)
 
 If using database, with SQLAlchemy it would look like::

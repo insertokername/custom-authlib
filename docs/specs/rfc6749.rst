@@ -28,7 +28,7 @@ check:
 Servers
 ~~~~~~~
 
-.. module:: authlib.oauth2.rfc6749
+.. module:: insertokname-authlib.oauth2.rfc6749
 
 .. autoclass:: AuthorizationServer
     :members:
@@ -79,7 +79,7 @@ Errors
 Grant Types
 ~~~~~~~~~~~
 
-.. module:: authlib.oauth2.rfc6749.grants
+.. module:: insertokname-authlib.oauth2.rfc6749.grants
 
 .. autoclass:: AuthorizationCodeGrant
     :member-order: bysource

@@ -3,14 +3,14 @@ from collections import OrderedDict
 
 from cryptography.hazmat.primitives.keywrap import InvalidUnwrap
 
-from authlib.common.encoding import urlsafe_b64encode, json_b64encode, to_bytes, urlsafe_b64decode, json_loads
-from authlib.jose import JsonWebEncryption
-from authlib.jose import OKPKey
-from authlib.jose import ECKey
-from authlib.jose.drafts import register_jwe_draft
-from authlib.jose.errors import InvalidEncryptionAlgorithmForECDH1PUWithKeyWrappingError, \
+from insertokname-authlib.common.encoding import urlsafe_b64encode, json_b64encode, to_bytes, urlsafe_b64decode, json_loads
+from insertokname-authlib.jose import JsonWebEncryption
+from insertokname-authlib.jose import OKPKey
+from insertokname-authlib.jose import ECKey
+from insertokname-authlib.jose.drafts import register_jwe_draft
+from insertokname-authlib.jose.errors import InvalidEncryptionAlgorithmForECDH1PUWithKeyWrappingError, \
     InvalidAlgorithmForMultipleRecipientsMode
-from authlib.jose.rfc7516.models import JWEHeader
+from insertokname-authlib.jose.rfc7516.models import JWEHeader
 
 register_jwe_draft(JsonWebEncryption)
 

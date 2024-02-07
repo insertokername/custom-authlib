@@ -1,8 +1,8 @@
 import time
 from unittest import TestCase, mock
 
-from authlib.jose import jwt
-from authlib.oauth2.rfc7523 import ClientSecretJWT, PrivateKeyJWT
+from insertokname-authlib.jose import jwt
+from insertokname-authlib.oauth2.rfc7523 import ClientSecretJWT, PrivateKeyJWT
 from tests.util import read_file_path
 
 

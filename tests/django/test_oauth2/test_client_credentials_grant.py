@@ -1,5 +1,5 @@
 import json
-from authlib.oauth2.rfc6749 import grants
+from insertokname-authlib.oauth2.rfc6749 import grants
 from .oauth2_server import TestCase
 from .models import User, Client
 

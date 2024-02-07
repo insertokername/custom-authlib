@@ -1,4 +1,4 @@
-from authlib.oauth1.rfc5849 import errors
+from insertokname-authlib.oauth1.rfc5849 import errors
 from django.test import override_settings
 from tests.util import decode_response
 from .models import User, Client
@@ -48,7 +48,7 @@ class AuthorizationTest(TestCase):
         self.assertEqual(data['error'], 'invalid_client')
 
     @override_settings(
-        AUTHLIB_OAUTH1_PROVIDER={'signature_methods': ['PLAINTEXT']})
+        insertokname-authlib_OAUTH1_PROVIDER={'signature_methods': ['PLAINTEXT']})
     def test_authorize_denied(self):
         self.prepare_data()
         server = self.create_server()
@@ -93,7 +93,7 @@ class AuthorizationTest(TestCase):
         self.assertIn('https://i.test', resp['Location'])
 
     @override_settings(
-        AUTHLIB_OAUTH1_PROVIDER={'signature_methods': ['PLAINTEXT']})
+        insertokname-authlib_OAUTH1_PROVIDER={'signature_methods': ['PLAINTEXT']})
     def test_authorize_granted(self):
         self.prepare_data()
         server = self.create_server()

@@ -1,9 +1,9 @@
 from flask import json
-from authlib.common.urls import add_params_to_uri
-from authlib.oauth2.rfc6749.grants import (
+from insertokname-authlib.common.urls import add_params_to_uri
+from insertokname-authlib.oauth2.rfc6749.grants import (
     ResourceOwnerPasswordCredentialsGrant as _PasswordGrant,
 )
-from authlib.oidc.core import OpenIDToken
+from insertokname-authlib.oidc.core import OpenIDToken
 from .models import db, User, Client
 from .oauth2_server import TestCase
 from .oauth2_server import create_authorization_server
@@ -12,7 +12,7 @@ from .oauth2_server import create_authorization_server
 class IDToken(OpenIDToken):
     def get_jwt_config(self, grant):
         return {
-            'iss': 'Authlib',
+            'iss': 'insertokname-authlib',
             'key': 'secret',
             'alg': 'HS256',
         }

@@ -5,7 +5,7 @@ OAuth Clients
     :description: This documentation contains Python OAuth 1.0 and OAuth 2.0 Clients
         implementation with requests, HTTPX, Flask, Django and Starlette.
 
-This part of the documentation contains information on the client parts. Authlib
+This part of the documentation contains information on the client parts. insertokname-authlib
 provides many frameworks integrations, including:
 
 * The famous Python Requests_
@@ -15,19 +15,19 @@ provides many frameworks integrations, including:
 * Starlette_ web framework integration
 * FastAPI_ web framework integration
 
-In order to use Authlib client, you have to install each library yourself. For
+In order to use insertokname-authlib client, you have to install each library yourself. For
 example, you want to use ``requests`` OAuth clients::
 
-    $ pip install Authlib requests
+    $ pip install insertokname-authlib requests
 
 For instance, you want to use ``httpx`` OAuth clients::
 
-    $ pip install -U Authlib httpx
+    $ pip install -U insertokname-authlib httpx
 
 Here is a simple overview of Flask OAuth client::
 
     from flask import Flask, jsonify
-    from authlib.integrations.flask_client import OAuth
+    from insertokname-authlib.integrations.flask_client import OAuth
 
     app = Flask(__name__)
     oauth = OAuth(app)

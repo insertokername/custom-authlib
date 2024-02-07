@@ -4,13 +4,13 @@ Django OIDC Provider
 ====================
 
 .. meta::
-    :description: How to create an OpenID Connect server in Django with Authlib.
+    :description: How to create an OpenID Connect server in Django with insertokname-authlib.
         And understand how OpenID Connect works.
 
 OpenID Connect 1.0 are built custom grant types and grant extensions. You need to
 read the Authorization Server chapter at first.
 
-.. module:: authlib.oauth2.rfc6749.grants
+.. module:: insertokname-authlib.oauth2.rfc6749.grants
     :noindex:
 
 Looking for OpenID Connect Client? Head over to :ref:`django_client`.
@@ -106,7 +106,7 @@ extended features. We can apply the :class:`OpenIDCode` extension to
 
 First, we need to implement the missing methods for ``OpenIDCode``::
 
-    from authlib.oidc.core import grants, UserInfo
+    from insertokname-authlib.oidc.core import grants, UserInfo
 
     class OpenIDCode(grants.OpenIDCode):
         def exists_nonce(self, nonce, request):
@@ -186,7 +186,7 @@ The Implicit Flow is mainly used by Clients implemented in a browser using
 a scripting language. You need to implement the missing methods of
 :class:`OpenIDImplicitGrant` before register it::
 
-    from authlib.oidc.core import grants
+    from insertokname-authlib.oidc.core import grants
 
     class OpenIDImplicitGrant(grants.OpenIDImplicitGrant):
         def exists_nonce(self, nonce, request):
@@ -226,7 +226,7 @@ OpenIDHybridGrant is a subclass of OpenIDImplicitGrant, so the missing methods
 are the same, except that OpenIDHybridGrant has one more missing method, that
 is ``save_authorization_code``. You can implement it like this::
 
-    from authlib.oidc.core import grants
+    from insertokname-authlib.oidc.core import grants
 
     class OpenIDHybridGrant(grants.OpenIDHybridGrant):
         def save_authorization_code(self, code, request):

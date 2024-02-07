@@ -1,10 +1,10 @@
 from unittest import TestCase, mock
 from flask import Flask, session
-from authlib.jose import jwk
-from authlib.oidc.core.grants.util import generate_id_token
-from authlib.integrations.flask_client import OAuth, OAuthError
-from authlib.integrations.flask_client import FlaskOAuth2App
-from authlib.common.urls import urlparse, url_decode
+from insertokname-authlib.jose import jwk
+from insertokname-authlib.oidc.core.grants.util import generate_id_token
+from insertokname-authlib.integrations.flask_client import OAuth, OAuthError
+from insertokname-authlib.integrations.flask_client import FlaskOAuth2App
+from insertokname-authlib.common.urls import urlparse, url_decode
 from cachelib import SimpleCache
 from ..util import (
     mock_send_value,
@@ -423,7 +423,7 @@ class FlaskOAuthTest(TestCase):
                 resp = client.get('/api/user')
                 self.assertEqual(resp.text, 'hi')
 
-                # trigger ctx.authlib_client_oauth_token
+                # trigger ctx.insertokname-authlib_client_oauth_token
                 resp = client.get('/api/user')
                 self.assertEqual(resp.text, 'hi')
 

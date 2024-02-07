@@ -7,12 +7,12 @@ OAuth for HTTPX
 .. meta::
     :description: An OAuth 1.0 and OAuth 2.0 Client implementation for a next
         generation HTTP client for Python, including support for OpenID Connect
-        and service account, powered by Authlib.
+        and service account, powered by insertokname-authlib.
 
-.. module:: authlib.integrations.httpx_client
+.. module:: insertokname-authlib.integrations.httpx_client
     :noindex:
 
-HTTPX is a next-generation HTTP client for Python. Authlib enables OAuth 1.0
+HTTPX is a next-generation HTTP client for Python. insertokname-authlib enables OAuth 1.0
 and OAuth 2.0 for HTTPX with its async versions:
 
 * :class:`OAuth1Client`
@@ -49,7 +49,7 @@ In :ref:`oauth_2_session`, there are many grant types, including:
 3. Password Flow
 4. Client Credentials Flow
 
-And also, Authlib supports non Standard OAuth 2.0 providers via Compliance Fix.
+And also, insertokname-authlib supports non Standard OAuth 2.0 providers via Compliance Fix.
 
 Read the common guide of :ref:`oauth_2_session` to understand the whole OAuth
 2.0 flow.
@@ -60,8 +60,8 @@ Using ``client_secret_jwt`` in HTTPX
 Here is how you could register and use ``client_secret_jwt`` client
 authentication method for HTTPX::
 
-    from authlib.integrations.httpx_client import AsyncOAuth2Client
-    from authlib.oauth2.rfc7523 import ClientSecretJWT
+    from insertokname-authlib.integrations.httpx_client import AsyncOAuth2Client
+    from insertokname-authlib.oauth2.rfc7523 import ClientSecretJWT
 
     client = AsyncOAuth2Client(
         'your-client-id', 'your-client-secret',
@@ -80,8 +80,8 @@ Using ``private_key_jwt`` in HTTPX
 Here is how you could register and use ``private_key_jwt`` client
 authentication method for HTTPX::
 
-    from authlib.integrations.httpx_client import AsyncOAuth2Client
-    from authlib.oauth2.rfc7523 import PrivateKeyJWT
+    from insertokname-authlib.integrations.httpx_client import AsyncOAuth2Client
+    from insertokname-authlib.oauth2.rfc7523 import PrivateKeyJWT
 
     with open('your-private-key.pem', 'rb') as f:
         private_key = f.read()
@@ -168,7 +168,7 @@ Take Google Service Account as an example, with the information in your
 service account JSON configure file::
 
     import json
-    from authlib.integrations.httpx_client import AsyncAssertionClient
+    from insertokname-authlib.integrations.httpx_client import AsyncAssertionClient
 
     with open('MyProject-1234.json') as f:
         conf = json.load(f)
